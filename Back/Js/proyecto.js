@@ -11,12 +11,12 @@ function mostrarRegistro() { }
 // Añade un objeto de tipo Registro al diario.
 function mostrarDiario() { }
 
-function calcularN00() {
-  let n00 = new Set([]);
+function obtenerSetAccionesMariano() {
+  let n00  = new Set([]);
   DIARIO.forEach(evento => {
-    n00 = new Set([]);;
-    n00.add(evento.eventos);
-    console.log(n00);
+    evento.eventos.forEach(accion => {
+      n00.add(accion);
+    });
     
   });
 }

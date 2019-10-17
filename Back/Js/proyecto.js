@@ -12,13 +12,13 @@ function mostrarRegistro() { }
 function mostrarDiario() { }
 
 function obtenerSetAccionesMariano() {
-  let n00  = new Set([]);
+  let acciones  = new Set([]);
   DIARIO.forEach(evento => {
     evento.eventos.forEach(accion => {
-      n00.add(accion);
+      acciones.add(accion);
     });
-    
   });
+  return acciones;
 }
 
 function phi(n00, n01, n10, n11) {
@@ -32,5 +32,5 @@ function phi(n00, n01, n10, n11) {
 
 
 console.log(phi(76, 9, 4, 1));
-console.log(calcularN00());
+console.log(obtenerSetAccionesMariano());
 

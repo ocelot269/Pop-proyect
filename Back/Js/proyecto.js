@@ -55,12 +55,12 @@ function matriz_eventos(registro) {
 
 // function mostrarRegistro() {}
 
-function calcular_correlacion() {
+/*function calcular_correlacion() {
   let listado = listado_matriz();
   listado.forEach(elemento => {
     console.log(elemento ,phi(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11));
   });
-}
+}*/
 
 function phi(n00, n01, n10, n11) {
   let numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
@@ -69,4 +69,49 @@ function phi(n00, n01, n10, n11) {
 }
 
 console.log(phi(76, 9, 4, 1));
-console.log(calcular_correlacion());
+
+let listado = listado_matriz();
+listado.forEach(elemento => {
+  console.log(elemento.nombre);
+  console.log(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11);
+  console.log(phi(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11))
+})
+
+
+/**
+ * creación de la tabla
+ */
+
+function tabla() {
+  let listado = listado_matriz();
+  listado.forEach(elemento => {
+    let tabla = document.createElement("table");
+    tabla.setAttribute("id", "tabla");
+    document.body.appendChild(tabla);
+  
+    let fila_nombres = document.createElement("tr_nombres");
+    fila_nombres.setAttribute("id", "tr_nombres");
+    document.getElementById("tabla").appendChild(fila_nombres);
+  
+    let celda_th = document.createElement("th");
+    let contenido_th = document.createTextNode(elemento.nombre);
+    celda_th.appendChild(contenido_th);
+    document.getElementById("tr_nombres").appendChild(celda_th);
+
+    let fila_valores = document.createElement("tr_valores");
+    fila_valores.setAttribute("id", "tr_valores");
+    document.getElementById("tabla").appendChild(fila_valores);
+
+    let celda_td = document.createElement("td");
+    let contenido00 = document.createTextNode(elemento.value.n00 + "-");
+    let contenido01 = document.createTextNode(elemento.value.n01 + "-");
+    let contenido10 = document.createTextNode(elemento.value.n10 + "-");
+    let contenido11 = document.createTextNode(elemento.value.n11);
+    celda_td.appendChild(contenido00);
+    celda_td.appendChild(contenido01);
+    celda_td.appendChild(contenido10);
+    celda_td.appendChild(contenido11);
+    document.getElementById("tr_nombres").appendChild(celda_td);
+  })
+}
+console.log(tabla());

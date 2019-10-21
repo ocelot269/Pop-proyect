@@ -103,15 +103,17 @@ function tabla() {
     document.getElementById("tabla").appendChild(fila_valores);
 
     let celda_td = document.createElement("td");
-    let contenido00 = document.createTextNode(elemento.value.n00 + "-");
-    let contenido01 = document.createTextNode(elemento.value.n01 + "-");
-    let contenido10 = document.createTextNode(elemento.value.n10 + "-");
+    let contenido00 = document.createTextNode(elemento.value.n00 + " ");
+    let contenido01 = document.createTextNode(elemento.value.n01 + " ");
+    let contenido10 = document.createTextNode(elemento.value.n10 + " ");
     let contenido11 = document.createTextNode(elemento.value.n11);
     celda_td.appendChild(contenido00);
     celda_td.appendChild(contenido01);
     celda_td.appendChild(contenido10);
     celda_td.appendChild(contenido11);
-    document.getElementById("tr_nombres").appendChild(celda_td);
+    document.getElementById("tr_valores").appendChild(celda_td);
+
+    tabla.setAttribute("border", "1");
   })
 }
 console.log(tabla());

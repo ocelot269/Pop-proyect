@@ -111,3 +111,10 @@ test('phi', () => {
   const esperado = 0.06859943405700354;
   console.log(expect(resultado).toBe(esperado));
 });
+
+test('listado', () => {
+  const resultado = eventos_diario().size;
+  const esperado = 26;
+  console.log(expect(resultado).toBe(esperado));
+});
+

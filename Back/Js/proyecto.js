@@ -82,43 +82,32 @@ listado.forEach(elemento => {
   console.log(phi(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11))
 })
 
-
 /**
- * creación de la tabla
+ * ¡CASOS TEST!
  */
 
-function tabla() {
-  let listado = listado_matriz();
-  listado.forEach(elemento => {
-    let tabla = document.createElement("table");
-    tabla.setAttribute("id", "tabla");
-    document.body.appendChild(tabla);
-  
-    let fila_nombres = document.createElement("tr_nombres");
-    fila_nombres.setAttribute("id", "tr_nombres");
-    document.getElementById("tabla").appendChild(fila_nombres);
-  
-    let celda_th = document.createElement("th");
-    let contenido_th = document.createTextNode(elemento.nombre);
-    celda_th.appendChild(contenido_th);
-    document.getElementById("tr_nombres").appendChild(celda_th);
+function expect(resultado) {
+  return {
+      toBe(esperado) {
+          if (resultado !== esperado) {
+              throw new Error('El resutado: ' + resultado +' no es igual al esperado: ' + esperado)
+          };
+      }
+  };
+};
 
-    let fila_valores = document.createElement("tr_valores");
-    fila_valores.setAttribute("id", "tr_valores");
-    document.getElementById("tabla").appendChild(fila_valores);
+function test(nombre, callback) {
+  try {
+      callback();
+      console.log(nombre);
+  } catch (Error) {
+      callback();
+      console.log(nombre);
+  };
+};
 
-    let celda_td = document.createElement("td");
-    let contenido00 = document.createTextNode(elemento.value.n00 + " ");
-    let contenido01 = document.createTextNode(elemento.value.n01 + " ");
-    let contenido10 = document.createTextNode(elemento.value.n10 + " ");
-    let contenido11 = document.createTextNode(elemento.value.n11);
-    celda_td.appendChild(contenido00);
-    celda_td.appendChild(contenido01);
-    celda_td.appendChild(contenido10);
-    celda_td.appendChild(contenido11);
-    document.getElementById("tr_valores").appendChild(celda_td);
-
-    tabla.setAttribute("border", "1");
-  })
-}
-console.log(tabla());
+test('phi', () => {
+  const resultado = phi(76, 9, 4, 1);
+  const esperado = 0.06859943405700354;
+  console.log(expect(resultado).toBe(esperado));
+});

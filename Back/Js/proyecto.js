@@ -1,8 +1,12 @@
 "use strict";
 
 var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));
-// listado de todos los diferentes eventos que hay en el diario
+
 var eventos_diario = () => {
+  /**
+   * Devuelve un set de todos los
+   * diferentes eventos que hay en el diario.
+   */
   let acciones = new Set([]);
   DIARIO.forEach(evento => {
     evento.eventos.forEach(accion => {
@@ -13,6 +17,11 @@ var eventos_diario = () => {
 };
 
 function listado_matriz() {
+  /**
+   * Devuelve un array con el evento
+   * y la matriz con sus valores correspondientes.
+   * Llama a "matriz_eventos" para recibir los valores.
+   */
   let listado_eventos = [];
   eventos_diario().forEach(registro => {
      listado_eventos.push(matriz_eventos(registro));
@@ -20,14 +29,13 @@ function listado_matriz() {
   return listado_eventos;
 }
 
-/**
- * n00 == no sucede el evento y no se convierte en pulpo
- * n01 == sucede el evento y pero no se convierte en pulpo
- * n10 == no sucede el evento y pero si se convierte en pulpo
- * n11 == sucede el evento y se convierte en pulpo
- */
-
 function matriz_eventos(registro) {
+  /**
+   * n00 == no sucede el evento y no se convierte en pulpo
+   * n01 == sucede el evento y pero no se convierte en pulpo
+   * n10 == no sucede el evento y pero si se convierte en pulpo
+   * n11 == sucede el evento y se convierte en pulpo
+   */
   let n01 = 0;
   let n11 = 0;
   let n10 = 0;
@@ -51,24 +59,21 @@ function matriz_eventos(registro) {
   };
 }
 
-// function contieneEvento($evento) {}
-
-// function mostrarRegistro() {}
-
-/*function calcular_correlacion() {
-  let listado = listado_matriz();
-  listado.forEach(elemento => {
-    console.log(elemento ,phi(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11));
-  });
-}*/
-
 function phi(n00, n01, n10, n11) {
   let numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
 
   return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
 }
 
+/**
+ * Diferentes console.log para ver que vamos 
+ * haciendo e ir "testeando".
+ */
+
 console.log(phi(76, 9, 4, 1));
+
+var listado_eventos = listado_matriz();
+console.log(listado_eventos);
 
 let listado = listado_matriz();
 listado.forEach(elemento => {

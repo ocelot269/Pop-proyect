@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));
 // listado de todos los diferentes eventos que hay en el diario
@@ -28,23 +28,12 @@ function listado_matriz() {
  */
 
 function matriz_eventos(registro) {
-  let n01 = 0;
-  let n11 = 0;
-  let n10 = 0;
-  let n00 = 0;
+  let n01 = 0 , n11 = 0 , n10 = 0,  n00 = 0;
   DIARIO.forEach(evento => {
     if (evento.eventos.includes(registro)) {
-      if (evento.pulpo) {
-        n11++;
-      } else {
-        n01++;
-      }
+      evento.pulpo ? n11++ : n01++;
     } else if (!evento.eventos.includes(registro)) {
-      if (evento.pulpo) {
-        n10++;
-      } else {
-        n00++;
-      }
+      evento.pulpo ? n10++ : n00++;
     }
   });
   return { nombre: registro, value: { n00: n00, n01: n01, n10: n10, n11: n11 }
@@ -64,7 +53,6 @@ function calcular_correlacion() {
 
 function phi(n00, n01, n10, n11) {
   let numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
-
   return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
 }
 

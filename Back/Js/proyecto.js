@@ -118,3 +118,8 @@ test('listado', () => {
   console.log(expect(resultado).toBe(esperado));
 });
 
+test('nombre evento', () => {
+  const resultado = listado_matriz()[12].nombre;
+  const esperado = "feria del pulpo";
+  console.log(expect(resultado).toBe(esperado));
+});

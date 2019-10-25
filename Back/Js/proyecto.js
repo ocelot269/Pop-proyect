@@ -87,38 +87,38 @@ listado.forEach(elemento => {
  * creación de la tabla
  */
 
-function tabla() {
-  let listado = listado_matriz();
-  listado.forEach(elemento => {
-    let tabla = document.createElement("table");
-    tabla.setAttribute("id", "tabla");
-    document.body.appendChild(tabla);
-  
-    let fila_nombres = document.createElement("tr_nombres");
-    fila_nombres.setAttribute("id", "tr_nombres");
-    document.getElementById("tabla").appendChild(fila_nombres);
-  
-    let celda_th = document.createElement("th");
-    let contenido_th = document.createTextNode(elemento.nombre);
-    celda_th.appendChild(contenido_th);
-    document.getElementById("tr_nombres").appendChild(celda_th);
+//function tabla() {
+//  let listado = listado_matriz();
+//  listado.forEach(elemento => {
+//    let tabla = document.createElement("table");
+//    tabla.setAttribute("id", "tabla");
+//    document.body.appendChild(tabla);
+//  
+//    let fila_nombres = document.createElement("tr_nombres");
+//    fila_nombres.setAttribute("id", "tr_nombres");
+//    document.getElementById("tabla").appendChild(fila_nombres);
+//  
+//    let celda_th = document.createElement("th");
+//    let contenido_th = document.createTextNode(elemento.nombre);
+//    celda_th.appendChild(contenido_th);
+//    document.getElementById("tr_nombres").appendChild(celda_th);//
 
-    let fila_valores = document.createElement("tr_valores");
-    fila_valores.setAttribute("id", "tr_valores");
-    document.getElementById("tabla").appendChild(fila_valores);
+//    let fila_valores = document.createElement("tr_valores");
+//    fila_valores.setAttribute("id", "tr_valores");
+//    document.getElementById("tabla").appendChild(fila_valores);//
 
-    let celda_td = document.createElement("td");
-    let contenido00 = document.createTextNode(elemento.value.n00 + " ");
-    let contenido01 = document.createTextNode(elemento.value.n01 + " ");
-    let contenido10 = document.createTextNode(elemento.value.n10 + " ");
-    let contenido11 = document.createTextNode(elemento.value.n11);
-    celda_td.appendChild(contenido00);
-    celda_td.appendChild(contenido01);
-    celda_td.appendChild(contenido10);
-    celda_td.appendChild(contenido11);
-    document.getElementById("tr_valores").appendChild(celda_td);
+//    let celda_td = document.createElement("td");
+//    let contenido00 = document.createTextNode(elemento.value.n00 + " ");
+//    let contenido01 = document.createTextNode(elemento.value.n01 + " ");
+//    let contenido10 = document.createTextNode(elemento.value.n10 + " ");
+//    let contenido11 = document.createTextNode(elemento.value.n11);
+//    celda_td.appendChild(contenido00);
+//    celda_td.appendChild(contenido01);
+//    celda_td.appendChild(contenido10);
+//    celda_td.appendChild(contenido11);
+//    document.getElementById("tr_valores").appendChild(celda_td);//
 
-    tabla.setAttribute("border", "1");
-  })
-}
-console.log(tabla());
+//    tabla.setAttribute("border", "1");
+//  })
+//}
+//console.log(tabla());

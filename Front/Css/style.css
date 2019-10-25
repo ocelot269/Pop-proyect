@@ -1,0 +1,46 @@
+header {
+    background-color: pink;
+}
+
+footer {
+    background-color: pink;
+}
+
+.calendario { 
+    margin:50px; 
+    font: 13px/1.5 Arial; 
+    display: table; 
+}
+
+.calendario .header { 
+    background: #2b2b2b; 
+    height: 34px; 
+    position: relative; 
+    color:#fff; 
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    font-weight:bold; 
+    text-transform: uppercase; 
+} 
+
+.calendario .header .mes {
+    margin-left: 15px;
+}
+
+.calendario .header span { 
+    display:inline-block; 
+    line-height:34px; 
+}
+
+.calendario table { 
+    background:#fff; 
+    border-collapse:collapse; 
+} 
+.calendario td { 
+    color:#2b2b2b; 
+    width:30px; 
+    height:30px; 
+    line-height:30px; 
+    text-align:center; 
+    border:1px solid #e6e6e6; 
+} 

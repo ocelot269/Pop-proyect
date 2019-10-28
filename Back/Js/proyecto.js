@@ -109,17 +109,18 @@ function test(nombre, callback) {
 test('phi', () => {
   const resultado = phi(76, 9, 4, 1);
   const esperado = 0.06859943405700354;
-  console.log(expect(resultado).toBe(esperado));
+  expect(resultado).toBe(esperado);
+  expect(resultado).to
 });
 
 test('listado', () => {
   const resultado = eventos_diario().size;
   const esperado = 26;
-  console.log(expect(resultado).toBe(esperado));
+  expect(resultado).toBe(esperado);
 });
 
 test('nombre evento', () => {
   const resultado = listado_matriz()[12].nombre;
   const esperado = "feria del pulpo";
-  console.log(expect(resultado).toBe(esperado));
+  expect(resultado).toBe(esperado);
 });

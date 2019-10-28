@@ -82,9 +82,8 @@ listado.forEach(elemento => {
   console.log(phi(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11))
 })
 
-
 /**
- * creación de la tabla
+ * ¡CASOS TEST!
  */
 
 //function tabla() {
@@ -122,3 +121,42 @@ listado.forEach(elemento => {
 //  })
 //}
 //console.log(tabla());
+
+function expect(resultado) {
+  return {
+      toBe(esperado) {
+          if (resultado !== esperado) {
+              throw new Error('El resutado: ' + resultado +' no es igual al esperado: ' + esperado)
+          };
+      }
+  };
+};
+
+function test(nombre, callback) {
+  try {
+      callback();
+      console.log(nombre);
+  } catch (Error) {
+      callback();
+      console.log(nombre);
+  };
+};
+
+test('phi', () => {
+  const resultado = phi(76, 9, 4, 1);
+  const esperado = 0.06859943405700354;
+  expect(resultado).toBe(esperado);
+  expect(resultado).to
+});
+
+test('listado', () => {
+  const resultado = eventos_diario().size;
+  const esperado = 26;
+  expect(resultado).toBe(esperado);
+});
+
+test('nombre evento', () => {
+  const resultado = listado_matriz()[12].nombre;
+  const esperado = "feria del pulpo";
+  expect(resultado).toBe(esperado);
+});

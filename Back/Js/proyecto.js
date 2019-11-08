@@ -1,11 +1,15 @@
 "use strict";
 
+var phi = {phi: function () {
+  let numero_raiz = (this.n10 + this.n11) * (this.n01 + this.n00) * (this.n01 + this.n11) * (this.n10 + this.n00);
+  return (this.n11 * this.n00 - this.n10 * this.n01) / Math.sqrt(numero_raiz);
+}}
+
 var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));
 // listado de todos los diferentes eventos que hay en el diario
 var eventosDiario = () => {
   let acciones = new Set([]);
   DIARIO.forEach(evento => {
-    // argumentos para el this.
     evento.eventos.forEach(accion => {
       acciones.add(accion);
     });
@@ -22,21 +26,30 @@ function tableCreate(data) {
   let tblBody = document.createElement("tbody");
 
   // cells creation
-  for (let tr = 0; tr <= data.length; tr++) {
+  for (let tr = 0; tr < data.length; tr++) {
     
     // table row creation
     let row = document.createElement("tr");
+    //accion posicion
+    const eventoPulpo = data[tr];
+    //listado de las propiedades
+    const eventoPulpoValues = Object.values(eventoPulpo);
 
-    for (let td = 0; td < 5; td++) {
-      // create element <td> and text node
-      //Make text node the contents of <td> element
-      // put <td> at end of the table row
-      let cell = document.createElement("td");
-      let cellText = document.createTextNode(data[0].nombre);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-    }
+      for (const key in eventoPulpoValues) {
 
+        if (data.hasOwnProperty(key)) {         
+          console.log(eventoPulpoValues[key]);
+          // create element <td> and text node
+          //Make text node the contents of <td> element
+          // put <td> at end of the table row
+          let cell = document.createElement("td");
+          let cellText = document.createTextNode(eventoPulpoValues[key]);
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+        }
+
+      }
+      
     //row added to end of table body
     tblBody.appendChild(row);
   }

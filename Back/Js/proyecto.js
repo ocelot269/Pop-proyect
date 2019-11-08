@@ -22,7 +22,7 @@ function tableCreate(data) {
   let tblBody = document.createElement("tbody");
 
   // cells creation
-  for (let tr = 0; tr <= data.length; tr++) {
+  for (let tr = 0; tr < data.length; tr++) {
     
     // table row creation
     let row = document.createElement("tr");
@@ -32,7 +32,7 @@ function tableCreate(data) {
       //Make text node the contents of <td> element
       // put <td> at end of the table row
       let cell = document.createElement("td");
-      let cellText = document.createTextNode(data[0].nombre);
+      let cellText = document.createTextNode(data[tr].nombre);
       cell.appendChild(cellText);
       row.appendChild(cell);
     }

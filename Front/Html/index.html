@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,18 @@
     <link rel="stylesheet" type="text/css" href="../Css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <table id="tabla">
-      <thead>
-        <tr>
-          <th>accion</th>
-          <th>probalidad</th>
-        </tr>
-      </thead>
-      <tbody id=tbody>
+        <thead>
+            <tr>
+                <th>accion</th>
+                <th>probalidad</th>
+            </tr>
+        </thead>
+        <tbody id=tbody>
 
-      </tbody>
+        </tbody>
     </table>
 
 
@@ -29,49 +31,116 @@
             <a href="" class="active">Inicio</a>
             <a href="">Algo</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-          </div>    
-          <script>
+        </div>
+        <script>
             function myFunction() {
-              var x = document.getElementById("myTopnav");
-              if (x.className === "topnav") {
-                x.className += " responsive";
-              } else {
-                x.className = "topnav";
-              }
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
             }
         </script>
     </header>
     <div class="calendario">
         <div class="header">
-            <span class="left button" id="prev"> &lang; </span> 
-            <span class="left hook"></span> 
-            <span class="mes" id="label"> Mes </span> 
-            <span class="right hook"></span> 
+            <span class="left button" id="prev"> &lang; </span>
+            <span class="left hook"></span>
+            <span class="mes" id="label"> Mes </span>
+            <span class="right hook"></span>
             <span class="right button" id="next"> &rang; </span>
         </div>
         <table class="dias">
-            <td>Lun</td> 
-            <td>Mar</td> 
-            <td>Mie</td> 
-            <td>Jue</td> 
-            <td>Vie</td> 
-            <td>Sab</td> 
+            <td>Lun</td>
+            <td>Mar</td>
+            <td>Mie</td>
+            <td>Jue</td>
+            <td>Vie</td>
+            <td>Sab</td>
             <td>Dom</td>
         </table>
-        <div id="cal-frame"> 
-            <table class="num"> 
-                <tbody> 
-                    <tr><td class="nil"></td><td class="nil"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr> 
-                    <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td class="today">11</td><td>12</td></tr> 
-                    <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr> 
-                    <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr> 
-                    <tr><td>27</td><td>28</td><td>29</td><td>30</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr> 
-                </tbody> 
+        <div id="cal-frame">
+            <table class="num">
+                <tbody>
+                    <tr>
+                        <td class="nil"></td>
+                        <td class="nil"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td class="today">11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td class="nil"></td>
+                        <td class="nil"></td>
+                        <td class="nil"></td>
+                    </tr>
+                </tbody>
             </table>
-        </div> 
+        </div>
     </div>
     <footer>
-        <h1>Footer</h1>
+        <div class="footer">
+            <div class="contain">
+                <div class="col">
+                    <h1>Support</h1>
+                    <ul>
+                        <li>Contact us</li>
+                        <li>Web chat</li>
+                        <li>Open ticket</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Copyright</h1>
+                    <ul>
+                        <li>Jose Antonio Zamora Andrés</li>
+                        <li>Sandra Cabrera García</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Social</h1>
+                    <ul>
+                        <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
+                        <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>

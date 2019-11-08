@@ -1,8 +1,9 @@
-
-const phi = (n00,n01,n10,n11) => {
+let Phi = Object.create(Object);
+Phi.prototype.phi = function phi(n00,n01,n10,n11) {
   let numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
   return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
 };
+
 
 var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));
 // listado de todos los diferentes eventos que hay en el diario
@@ -87,13 +88,13 @@ function matriz_eventos(registro) {
     }
   });
 
- return {
-  nombre: registro,
-  n00: n00,
-  n01: n01,
-  n10: n10,
-  n11: n11,
-  phi: phi(n00,n01,n10,n11) }
+  eventos = Object.create(phi);
+  return { nombre: registro,
+          n00: n00,
+          n01: n01,
+          n10: n10,
+          n11: n11,
+          phi: eventos.prototype.phi(n00,n01,n10,n11) }
 }
 
 function calcular_correlacion() {

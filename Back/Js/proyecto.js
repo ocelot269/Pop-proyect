@@ -1,7 +1,7 @@
 
 const phi = (n00,n01,n10,n11) => {
-  let numero_raiz = (this.n10 + this.n11) * (this.n01 + this.n00) * (this.n01 + this.n11) * (this.n10 + this.n00);
-  return (this.n11 * this.n00 - this.n10 * this.n01) / Math.sqrt(numero_raiz);
+  let numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
+  return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
 };
 
 var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));

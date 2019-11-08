@@ -1,14 +1,11 @@
 "use strict";
 
 var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));
-
-var eventos_diario = () => {
-  /**
-   * Devuelve un set de todos los
-   * diferentes eventos que hay en el diario.
-   */
+// listado de todos los diferentes eventos que hay en el diario
+var eventosDiario = () => {
   let acciones = new Set([]);
   DIARIO.forEach(evento => {
+    // argumentos para el this.
     evento.eventos.forEach(accion => {
       acciones.add(accion);
     });
@@ -16,147 +13,79 @@ var eventos_diario = () => {
   return acciones;
 };
 
+function tableCreate(data) {
+  //body reference
+  let body = document.getElementsByTagName("body")[0];
+
+  // create elements <table> and a <tbody>
+  let tbl = document.createElement("table");
+  let tblBody = document.createElement("tbody");
+
+  // cells creation
+  for (let tr = 0; tr < data.length; tr++) {
+    
+    // table row creation
+    let row = document.createElement("tr");
+
+    for (let td = 0; td < 5; td++) {
+      // create element <td> and text node
+      //Make text node the contents of <td> element
+      // put <td> at end of the table row
+      let cell = document.createElement("td");
+      let cellText = document.createTextNode(data[tr].nombre);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    }
+
+    //row added to end of table body
+    tblBody.appendChild(row);
+  }
+
+  // append the <tbody> inside the <table>
+  tbl.appendChild(tblBody);
+  // put <table> in the <body>
+  body.appendChild(tbl);
+  // tbl border attribute to
+  tbl.setAttribute("border", "2");
+}
+
 function listado_matriz() {
-  /**
-   * Devuelve un array con el evento
-   * y la matriz con sus valores correspondientes.
-   * Llama a "matriz_eventos" para recibir los valores.
-   */
-  let listado_eventos = [];
-  eventos_diario().forEach(registro => {
-     listado_eventos.push(matriz_eventos(registro));
+  let listadoEventos = new Array();
+  eventosDiario().forEach(registro => {
+    listadoEventos.push(matriz_eventos(registro));
   });
-  return listado_eventos;
+  return listadoEventos;
 }
 
 function matriz_eventos(registro) {
-  /**
-   * n00 == no sucede el evento y no se convierte en pulpo
-   * n01 == sucede el evento y pero no se convierte en pulpo
-   * n10 == no sucede el evento y pero si se convierte en pulpo
-   * n11 == sucede el evento y se convierte en pulpo
-   */
-  let n01 = 0;
-  let n11 = 0;
-  let n10 = 0;
-  let n00 = 0;
+  let n01 = 0, n11 = 0, n10 = 0, n00 = 0;
+  
   DIARIO.forEach(evento => {
     if (evento.eventos.includes(registro)) {
-      if (evento.pulpo) {
-        n11++;
-      } else {
-        n01++;
-      }
+      evento.pulpo ? n11++ : n01++;
     } else if (!evento.eventos.includes(registro)) {
-      if (evento.pulpo) {
-        n10++;
-      } else {
-        n00++;
-      }
+      evento.pulpo ? n10++ : n00++;
     }
   });
-  return { nombre: registro, value: { n00: n00, n01: n01, n10: n10, n11: n11 }
-  };
-}
 
-function phi(n00, n01, n10, n11) {
-  let numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
-
-  return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
-}
-
-/**
- * Diferentes console.log para ver que vamos 
- * haciendo e ir "testeando".
- */
-
-console.log(phi(76, 9, 4, 1));
-
-var listado_eventos = listado_matriz();
-console.log(listado_eventos);
-
-let listado = listado_matriz();
-listado.forEach(elemento => {
-  console.log(elemento.nombre);
-  console.log(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11);
-  console.log(phi(elemento.value.n00,elemento.value.n01,elemento.value.n10,elemento.value.n11))
-})
-
-/**
- * ¡CASOS TEST!
- */
-
-//function tabla() {
-//  let listado = listado_matriz();
-//  listado.forEach(elemento => {
-//    let tabla = document.createElement("table");
-//    tabla.setAttribute("id", "tabla");
-//    document.body.appendChild(tabla);
-//  
-//    let fila_nombres = document.createElement("tr_nombres");
-//    fila_nombres.setAttribute("id", "tr_nombres");
-//    document.getElementById("tabla").appendChild(fila_nombres);
-//  
-//    let celda_th = document.createElement("th");
-//    let contenido_th = document.createTextNode(elemento.nombre);
-//    celda_th.appendChild(contenido_th);
-//    document.getElementById("tr_nombres").appendChild(celda_th);//
-
-//    let fila_valores = document.createElement("tr_valores");
-//    fila_valores.setAttribute("id", "tr_valores");
-//    document.getElementById("tabla").appendChild(fila_valores);//
-
-//    let celda_td = document.createElement("td");
-//    let contenido00 = document.createTextNode(elemento.value.n00 + " ");
-//    let contenido01 = document.createTextNode(elemento.value.n01 + " ");
-//    let contenido10 = document.createTextNode(elemento.value.n10 + " ");
-//    let contenido11 = document.createTextNode(elemento.value.n11);
-//    celda_td.appendChild(contenido00);
-//    celda_td.appendChild(contenido01);
-//    celda_td.appendChild(contenido10);
-//    celda_td.appendChild(contenido11);
-//    document.getElementById("tr_valores").appendChild(celda_td);//
-
-//    tabla.setAttribute("border", "1");
-//  })
-//}
-//console.log(tabla());
-
-function expect(resultado) {
   return {
-      toBe(esperado) {
-          if (resultado !== esperado) {
-              throw new Error('El resutado: ' + resultado +' no es igual al esperado: ' + esperado)
-          };
-      }
+    nombre: registro,
+    n00: n00,
+    n01: n01,
+    n10: n10,
+    n11: n11,
+    phi: function () {
+      let numero_raiz = (this.n10 + this.n11) * (this.n01 + this.n00) * (this.n01 + this.n11) * (this.n10 + this.n00);
+      return (this.n11 * this.n00 - this.n10 * this.n01) / Math.sqrt(numero_raiz);
+    }
   };
-};
+}
 
-function test(nombre, callback) {
-  try {
-      callback();
-      console.log(nombre);
-  } catch (Error) {
-      callback();
-      console.log(nombre);
-  };
-};
+function calcular_correlacion() {
+  listado_matriz().forEach(elemento => {
+    console.log(elemento.nombre,elemento.phi());
+  });
+}
 
-test('phi', () => {
-  const resultado = phi(76, 9, 4, 1);
-  const esperado = 0.06859943405700354;
-  expect(resultado).toBe(esperado);
-  expect(resultado).to
-});
-
-test('listado', () => {
-  const resultado = eventos_diario().size;
-  const esperado = 26;
-  expect(resultado).toBe(esperado);
-});
-
-test('nombre evento', () => {
-  const resultado = listado_matriz()[12].nombre;
-  const esperado = "feria del pulpo";
-  expect(resultado).toBe(esperado);
-});
+console.log(calcular_correlacion());
+tableCreate(listado_matriz());

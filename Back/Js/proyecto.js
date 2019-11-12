@@ -70,13 +70,6 @@ function listado_matriz() {
   return listadoEventos;
 }
 
-/**
- * n00 == no sucede el evento y no se convierte en pulpo
- * n01 == sucede el evento y pero no se convierte en pulpo
- * n10 == no sucede el evento y pero si se convierte en pulpo
- * n11 == sucede el evento y se convierte en pulpo
- */
-
 function matriz_eventos(registro) {
   let n01 = 0, n11 = 0, n10 = 0, n00 = 0;
   

@@ -61,6 +61,11 @@ footer {
     border:1px solid #e6e6e6; 
 } 
 
+.num td:hover {
+  background: #bb330f;
+  cursor: pointer;
+}
+
 /* Navbar */
 
 body {

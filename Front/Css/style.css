@@ -1,14 +1,71 @@
-/* Navbar */
-body {
-  margin: 0;
+.body {
+  width: 100%;
 }
 
-.topnav {
+/* Grid */
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.sidebar2 {
+  grid-area: sidebar2;
+}
+
+.content {
+  grid-area: content;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    "header"
+    "sidebar"
+    "content"
+    "sidebar2"
+    "footer"
+}
+
+@media only screen and (min-width: 500px) {
+  .grid {
+    grid-template-columns: 20% auto;
+    grid-template-areas:
+      "header   header"
+      "sidebar  content"
+      "sidebar2 sidebar2"
+      "footer   footer";
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .grid {
+    grid-gap: 20px;
+    grid-template-columns: 120px auto 120px;
+    grid-template-areas:
+      "header  header  header"
+      "sidebar content sidebar2"
+      "footer  footer  footer";
+    max-width: 100%;
+  }
+}
+
+/* Navbar */
+
+.header {
   overflow: hidden;
   background-color: #270c27;
 }
 
-.topnav a {
+.header a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -23,7 +80,7 @@ body {
   color: white;
 }
 
-.topnav .icon {
+.header .icon {
   display: none;
 }
 
@@ -59,7 +116,7 @@ body {
   text-align: left;
 }
 
-.topnav a:hover,
+.header a:hover,
 .dropdown:hover .dropbtn {
   background-color: #752475;
   color: white;
@@ -75,158 +132,43 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child),
+  .header a:not(:first-child),
   .dropdown .dropbtn {
     display: none;
   }
 
-  .topnav a.icon {
+  .header a.icon {
     float: right;
     display: block;
   }
 
-  .topnav.responsive {
+  .header.responsive {
     position: relative;
   }
 
-  .topnav.responsive .icon {
+  .header.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
 
-  .topnav.responsive a {
+  .header.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
 
-  .topnav.responsive .dropdown {
+  .header.responsive .dropdown {
     float: none;
   }
 
-  .topnav.responsive .dropdown-content {
+  .header.responsive .dropdown-content {
     position: relative;
   }
 
-  .topnav.responsive .dropdown .dropbtn {
+  .header.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
-  }
-}
-
-/* Footer */
-.footer {
-  width: 100%;
-  height: auto;
-  background-color: #070617;
-  bottom: 0px;
-  position: fixed;
-}
-
-.footer .col {
-  width: 230px;
-  height: auto;
-  float: left;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
-}
-
-.footer .col h1 {
-  margin: 0;
-  padding: 0;
-  font-family: inherit;
-  font-size: 12px;
-  line-height: 17px;
-  padding: 20px 0px 5px 0px;
-  color: #ddd;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.250em;
-}
-
-.footer .col ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer .col ul li {
-  color: #999999;
-  font-size: 14px;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 5px 0px 5px 0px;
-  cursor: pointer;
-}
-
-.col ul li {
-  display: inline-block;
-  padding-right: 14px !important;
-}
-
-.footer .col ul li:hover {
-  color: #ffffff;
-  transition: .1s;
-  -webkit-transition: .1s;
-  -moz-transition: .1s;
-}
-
-.clearfix {
-  clear: both;
-}
-
-@media only screen and (min-width: 1280px) {
-  .contain {
-    width: 1200px;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (max-width: 1139px) {
-  .contain .social {
-    width: 1000px;
-    display: block;
-  }
-
-  .social h1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  .footer .col {
-    width: 33%;
-  }
-
-  .footer .col h1 {
-    font-size: 14px;
-  }
-
-  .footer .col ul li {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .footer .col {
-    width: 50%;
-  }
-
-  .footer .col h1 {
-    font-size: 14px;
-  }
-
-  .footer .col ul li {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 340px) {
-  .footer .col {
-    width: 100%;
   }
 }

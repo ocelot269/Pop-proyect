@@ -132,6 +132,7 @@
 }
 
 @media screen and (max-width: 600px) {
+
   .header a:not(:first-child),
   .dropdown .dropbtn {
     display: none;
@@ -170,5 +171,72 @@
     display: block;
     width: 100%;
     text-align: left;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background-color: #270c27;
+  color: #f2f2f2;
+}
+
+.contenido {
+  float: left;
+  margin-left: 3%;
+}
+
+.contenido .nombres .redes, h1 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.contenido .nombres .redes, ul {
+  padding: 0;
+  margin: 4px;
+  margin-left: 4px;
+}
+
+.contenido .nombres .redes, ul li {
+  list-style: none;
+}
+
+.contenido ul li a {
+  text-decoration: none;
+  color: #cccccc;
+  margin-bottom: 6px;
+}
+
+.contenido ul li a:hover {
+  color: #b3b3b3;
+}
+
+.nombres {
+  float: left;
+  margin-left: 15%;
+}
+
+.nombres p {
+  color: #cccccc;
+  margin: 2px 0 8px 0;
+}
+
+.redes {
+  float: left;
+  margin-left: 6%;
+}
+
+.redes a {
+  margin-left: 2px;
+}
+
+@media screen and (max-width: 400px) {
+
+  .contenido .nombres .redes, h1 {
+    font-size: 13px;
+  }
+
+  .contenido .nombres .redes {
+    font-size: 12px;
   }
 }

@@ -230,13 +230,63 @@
   margin-left: 2px;
 }
 
-@media screen and (max-width: 400px) {
 
-  .contenido .nombres .redes, h1 {
-    font-size: 13px;
+@media screen and (max-width: 600px) {
+
+  .contenido {
+    font-size: 12px;
+    float: left;
+    margin-left: 3%;
   }
 
-  .contenido .nombres .redes {
+  .nombres {
     font-size: 12px;
+    float: left;
+    margin-left: 15%;
+  }
+
+  .redes {
+    float: left;
+    margin-left: 3%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .contenido {
+    float: left;
+    margin-left: 12px;
+  }
+
+  .nombres {
+    float: left;
+    margin-left: 12px;
+  }
+
+  .redes {
+    float: left;
+    margin-left: 12px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+
+  .contenido .nombres .redes, h1 {
+    font-size: 12px;
+  }
+
+  .contenido {
+    float: left;
+    margin-left: 12px;
+  }
+
+  .nombres {
+    float: left;
+    margin-left: 12px;
+  }
+
+  .redes {
+    float: left;
+    margin-left: 12px;
   }
 }

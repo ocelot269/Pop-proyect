@@ -4,10 +4,9 @@ Phi.prototype.phi = function phi(n00,n01,n10,n11) {
   return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
 };
 
-
-var dataFromlocalStorage = JSON.parse(localStorage.getItem("diario"));
+let listadoEventosCorrelacion = new Array();
 // listado de todos los diferentes eventos que hay en el diario
-var eventosDiario = () => {
+var obtenerSetEventosDiario = (DIARIO) => {
   let acciones = new Set([]);
   DIARIO.forEach(evento => {
     evento.eventos.forEach(accion => {
@@ -17,7 +16,7 @@ var eventosDiario = () => {
   return acciones;
 };
 
-function tableCreate(data) {
+function crearTablaCorrelaciones() {
   //body reference
   let body = document.getElementsByTagName("body")[0];
 
@@ -26,18 +25,18 @@ function tableCreate(data) {
   let tblBody = document.createElement("tbody");
 
   // cells creation
-  for (let tr = 0; tr < data.length; tr++) {
+  for (let tr = 0; tr < listadoEventosCorrelacion.length; tr++) {
     
     // table row creation
     let row = document.createElement("tr");
     //accion posicion
-    const eventoPulpo = data[tr];
+    const eventoPulpo = listadoEventosCorrelacion[tr];
     //listado de las propiedades
     const eventoPulpoValues = Object.values(eventoPulpo);
 
       for (const key in eventoPulpoValues) {
 
-        if (data.hasOwnProperty(key)) {         
+        if (listadoEventosCorrelacion.hasOwnProperty(key)) {         
           console.log(eventoPulpoValues[key]);
           // create element <td> and text node
           //Make text node the contents of <td> element
@@ -62,18 +61,16 @@ function tableCreate(data) {
   tbl.setAttribute("border", "2");
 }
 
-function listado_matriz() {
-  let listadoEventos = new Array();
-  eventosDiario().forEach(registro => {
-    listadoEventos.push(matriz_eventos(registro));
+function obtenerListadoEventosCorrelacion(DIARIO) {
+  obtenerSetEventosDiario(DIARIO).forEach(registro => {
+    listadoEventosCorrelacion.push(calcularCorrelacion(registro,DIARIO));
   });
-  return listadoEventos;
+  console.log(listadoEventosCorrelacion);
 }
 
-function matriz_eventos(registro) {
+function calcularCorrelacion(registro, listaEventos) {
   let n01 = 0, n11 = 0, n10 = 0, n00 = 0;
-  
-  DIARIO.forEach(evento => {
+  listaEventos.forEach(evento => {
     if (evento.eventos.includes(registro)) {
       evento.pulpo ? n11++ : n01++;
     } else if (!evento.eventos.includes(registro)) {
@@ -90,11 +87,18 @@ function matriz_eventos(registro) {
           phi: eventos.prototype.phi(n00,n01,n10,n11) }
 }
 
-function calcular_correlacion() {
-  listado_matriz().forEach(elemento => {
+function mostrarCorrelacion() {
+  listadoEventosCorrelacion.forEach(elemento => {
     console.log(elemento);
   });
 }
 
-console.log(calcular_correlacion());
-tableCreate(listado_matriz());
+module.exports = {
+  Phi: Phi,
+  obtenerSetEventosDiario: obtenerSetEventosDiario,
+  crearTablaCorrelaciones: crearTablaCorrelaciones,
+  obtenerListadoEventosCorrelacion: obtenerListadoEventosCorrelacion,
+  calcularCorrelacion: calcularCorrelacion,
+  mostrarCorrelacion: mostrarCorrelacion,
+  listadoEventosCorrelacion: listadoEventosCorrelacion,
+}

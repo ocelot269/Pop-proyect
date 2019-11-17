@@ -1,0 +1,22 @@
+{
+  "name": "Pop-proyect",
+  "version": "1.0.0",
+  "description": "El pulpo de raza loba\r =====================\r #### Examen programación Dual Septiembre 2018",
+  "main": "diario.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocelot269/Pop-proyect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ocelot269/Pop-proyect/issues"
+  },
+  "homepage": "https://github.com/ocelot269/Pop-proyect#readme"
+}

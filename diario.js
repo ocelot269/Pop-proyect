@@ -617,5 +617,6 @@ const DIARIO = [
   }
 ];
 
-
-localStorage.setItem("diario", JSON.stringify(DIARIO));
+module.exports = {
+  DIARIO: DIARIO
+}

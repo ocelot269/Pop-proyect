@@ -118,9 +118,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"../../back/Js/proyecto.js":[function(require,module,exports) {
-var Phi = Object.create(Object);
+var phi = Object.create(Object);
 
-Phi.prototype.phi = function phi(n00, n01, n10, n11) {
+phi.prototype.phi = function phi(n00, n01, n10, n11) {
   var numero_raiz = (n10 + n11) * (n01 + n00) * (n01 + n11) * (n10 + n00);
   return (n11 * n00 - n10 * n01) / Math.sqrt(numero_raiz);
 };
@@ -214,7 +214,7 @@ function mostrarCorrelacion() {
 }
 
 module.exports = {
-  Phi: Phi,
+  phi: phi,
   obtenerSetEventosDiario: obtenerSetEventosDiario,
   crearTablaCorrelaciones: crearTablaCorrelaciones,
   obtenerListadoEventosCorrelacion: obtenerListadoEventosCorrelacion,
@@ -503,9 +503,7 @@ var proyecto = require('./proyecto');
 var diario = require('../../diario'); //set de acciones
 
 
-console.log(proyecto.obtenerSetEventosDiario(diario.DIARIO));
 proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
-console.log(proyecto.mostrarCorrelacion(proyecto.listadoEventosConValores));
 proyecto.crearTablaCorrelaciones(proyecto.listadoEventosConValores);
 },{"./proyecto":"../../back/Js/proyecto.js","../../diario":"../../diario.js"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -535,7 +533,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53714" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -16,8 +16,8 @@
   grid-area: content;
 }
 
-.header {
-  grid-area: header;
+.topnav {
+  grid-area: topnav;
 }
 
 .footer {
@@ -28,7 +28,7 @@
   display: grid;
   grid-gap: 1em;
   grid-template-areas:
-    "header"
+    "topnav"
     "sidebar"
     "content"
     "sidebar2"
@@ -39,7 +39,7 @@
   .grid {
     grid-template-columns: 20% auto;
     grid-template-areas:
-      "header   header"
+      "topnav   topnav"
       "sidebar  content"
       "sidebar2 sidebar2"
       "footer   footer";
@@ -60,12 +60,12 @@
 
 /* Navbar */
 
-.header {
+.topnav {
   overflow: hidden;
   background-color: #270c27;
 }
 
-.header a {
+.topnav a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -80,7 +80,7 @@
   color: white;
 }
 
-.header .icon {
+.topnav .icon {
   display: none;
 }
 
@@ -116,7 +116,7 @@
   text-align: left;
 }
 
-.header a:hover,
+.topnav a:hover,
 .dropdown:hover .dropbtn {
   background-color: #752475;
   color: white;
@@ -133,41 +133,41 @@
 
 @media screen and (max-width: 600px) {
 
-  .header a:not(:first-child),
+  .topnav a:not(:first-child),
   .dropdown .dropbtn {
     display: none;
   }
 
-  .header a.icon {
+  .topnav a.icon {
     float: right;
     display: block;
   }
 
-  .header.responsive {
+  .topnav.responsive {
     position: relative;
   }
 
-  .header.responsive .icon {
+  .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
 
-  .header.responsive a {
+  .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
 
-  .header.responsive .dropdown {
+  .topnav.responsive .dropdown {
     float: none;
   }
 
-  .header.responsive .dropdown-content {
+  .topnav.responsive .dropdown-content {
     position: relative;
   }
 
-  .header.responsive .dropdown .dropbtn {
+  .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;

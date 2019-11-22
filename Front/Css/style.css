@@ -68,7 +68,7 @@ h1 {
 
 .topnav {
   overflow: hidden;
-  background-color: #270c27;
+  background-color: #054B4E;
 }
 
 .topnav a {
@@ -82,7 +82,7 @@ h1 {
 }
 
 .active {
-  background-color: #4d194d;
+  background-color: #267276;
   color: white;
 }
 
@@ -123,7 +123,7 @@ h1 {
 
 .topnav a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #752475;
+  background-color: #42898C;
   color: white;
 }
 
@@ -185,7 +185,7 @@ h1 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #270c27;
+  background-color: #054B4E;
   color: #f2f2f2;
   text-align: center;
 }

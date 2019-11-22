@@ -55,7 +55,7 @@ h1 {
 @media only screen and (min-width: 600px) {
   .grid {
     grid-gap: 20px;
-    grid-template-columns: 120px auto 120px;
+    grid-template-columns: 120px auto 300px;
     grid-template-areas:
       "topnav  topnav  topnav"
       "sidebar content sidebar2"
@@ -206,4 +206,21 @@ h1 {
 .nombres p {
   color: #cccccc;
   margin: 2px 0 13px 0;
+}
+
+/* Newsletter */
+
+input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+  background-color: #42898C;
 }

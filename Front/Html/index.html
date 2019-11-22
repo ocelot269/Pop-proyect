@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../Css/style.css" />
     <title>Proyecto POP</title>
 </head>
@@ -28,59 +29,20 @@
         </script>
         <div class="sidebar">Algo</div>
         <div class="sidebar2">Algo 2</div>
-        <div class="calendario">
-            <div class="header">
-                <span class="left button" id="prev"> &lang; </span>
-                <span class="left hook"></span>
-                <span class="mes" id="label"> Mes </span>
-                <span class="right hook"></span>
-                <span class="right button" id="next"> &rang; </span>
-            </div>
-            <table class="dias">
-                <td>Lun</td>
-                <td>Mar</td>
-                <td>Mie</td>
-                <td>Jue</td>
-                <td>Vie</td>
-                <td>Sab</td>
-                <td>Dom</td>
-            </table>
-            <div id="cal-frame">
-                <table class="num">
-                    <tbody>
-                        <script>
-                            for (let index = 0; index <= 26; index++) {
-                                let lista = document.querySelector('.num');
-                                let row = document.createElement("tr");
-                                if (index % 7 == 0) {
-                                    lista.appendChild(row);
-                                    for (let indice = 1; indice < 8; indice++) {
-                                        let cell = document.createElement("td");
-                                        row.appendChild(cell);
-                                        cell.innerHTML = index + indice;
-                                    }
-                                }
-                            }
-                        </script>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <div class="content">Contenido</div>
         <div class="footer">
-            <div class="contenido">
+            <div class="contenido" style="flex-grow: 5; justify-content: flex-start">
                 <h1>Contenido</h1>
-                <ul>
-                    <li><a href="#"> Contacto</a></li>
-                    <li><a href="#">Explicación</a></li>
-                    <li><a href="">Algo</a></li>
-                </ul>
+                <a href="#"> Contacto</a><br>
+                <a href="#">Explicación</a><br>
+                <a href="">Algo</a>
             </div>
-            <div class="nombres">
+            <div class="nombres" style="flex-grow: 3; justify-content: flex-end">
                 <h1>Autores</h1>
                 <p>Jose Antonio Zamora Andrés</p>
                 <p>Sandra Cabrera García</p>
             </div>
-            <div class="redes">
+            <div class="redes" style="flex-grow: 2; justify-content: flex-end">
                 <h1>Social</h1>
                 <a href="https://github.com/ocelot269"><img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoomskqBHw1diTlhQBHA7krBgtr9Vjlu7UJaBfRD584XzJHYy_Ag&s"

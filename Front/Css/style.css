@@ -8,10 +8,6 @@ h1 {
 
 /* Grid */
 
-.sidebar {
-  grid-area: sidebar;
-}
-
 .sidebar2 {
   grid-area: sidebar2;
 }
@@ -35,7 +31,6 @@ h1 {
   font-family: 'Noto Sans', sans-serif;
   grid-template-areas:
     "topnav"
-    "sidebar"
     "content"
     "sidebar2"
     "footer"
@@ -43,10 +38,10 @@ h1 {
 
 @media only screen and (min-width: 500px) {
   .grid {
-    grid-template-columns: 20% auto;
+    grid-template-columns: auto 20%;
     grid-template-areas:
       "topnav   topnav"
-      "sidebar  content"
+      "content  content"
       "sidebar2 sidebar2"
       "footer   footer";
   }
@@ -55,10 +50,10 @@ h1 {
 @media only screen and (min-width: 600px) {
   .grid {
     grid-gap: 20px;
-    grid-template-columns: 120px auto 300px;
+    grid-template-columns: auto auto 300px;
     grid-template-areas:
       "topnav  topnav  topnav"
-      "sidebar content sidebar2"
+      "content content sidebar2"
       "footer  footer  footer";
     max-width: 100%;
   }

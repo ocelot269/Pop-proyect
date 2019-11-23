@@ -1,5 +1,9 @@
 /* Grid */
 
+.titulo {
+    grid-area: titulo;
+}
+
 .dias {
     grid-area: dias;
 }
@@ -23,6 +27,7 @@
     font-family: 'Noto Sans', sans-serif;
     grid-template-areas:
         "topnav"
+        "titulo"
         "dias"
         "semanas"
         "footer"
@@ -32,6 +37,7 @@
     .grid {
         grid-template-areas:
             "topnav   topnav"
+            "titulo titulo"
             "dias dias"
             "semanas semanas"
             "footer   footer";
@@ -42,6 +48,7 @@
     .grid {
         grid-template-areas:
             "topnav  topnav  topnav"
+            "titulo titulo titulo"
             "dias dias dias"
             "semanas semanas semanas"
             "footer  footer  footer";
@@ -58,6 +65,7 @@
     align-items: center;
     text-align: center;
     border: 1px solid black;
+    font-family: 'Fjalla One', serif;
 }
 
 /* Semanas */

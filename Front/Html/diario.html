@@ -8,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../Css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../Css/calendario.css" />
+    <link rel="stylesheet" type="text/css" href="../Css/diario.css" />
     <title>Proyecto POP</title>
 </head>
 
 <body>
     <div class="grid">
         <div class="topnav" id="myTopnav">
-            <a href="/Front/Html/index.html" class="active">Inicio</a>
-            <a href="">Algo</a>
+            <a href="/Front/Html/index.html">Inicio</a>
+            <a href="/Front/Html/diario.html" class="active">Diario</a>
             <a href="" id="login"><i class="fa fa-fw fa-user"></i> Login</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
@@ -33,10 +33,10 @@
         <div class="dias">
             <div>Lunes</div>
             <div>Martes</div>
-            <div>Miercoles</div>
+            <div>Miércoles</div>
             <div>Jueves</div>
             <div>Viernes</div>
-            <div>Sabado</div>
+            <div>Sábado</div>
             <div>Domingo</div>
         </div>
         <div class="semanas">
@@ -47,7 +47,7 @@
                     if (index % 7 == 0) {
                         lista.appendChild(row);
                         for (var indice = 1; indice <= 7; indice++) {
-                            var cell = document.createElement("div");
+                            var cell = document.createElement("p");
                             row.appendChild(cell);
                             cell.innerHTML = index + indice;
                         }

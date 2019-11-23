@@ -52,31 +52,29 @@
 /* Días */
 
 .dias {
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+    "Lunes Martes Miercoles Jueves Viernes Sabado Domingo";
     align-items: center;
     text-align: center;
     border: 1px solid black;
-}
-
-.dias div {
-    width: 100px;
-    margin: 3px;
-    text-align: center;
-    flex-grow: 1;
 }
 
 /* Semanas */
 
-.semanas div{
-    display: flex;
-    align-items: center;
-    text-align: center;
+.semanas{
+    display: grid;
 }
 
-.semanas div div {
-    width: 100px;
+.semanas div {
+    display: flex;
+    align-items: center;
+}
+
+.semanas div p{
     margin: 3px;
     text-align: center;
-    flex-grow: 1;
     border: 1px solid black;
+    flex-grow: 2;
+    
 }

@@ -128,8 +128,6 @@ visualization/dist/
 # End of https://www.gitignore.io/api/intellij,jetbrains,java,code-java,macos,windows,linux,node,angular,grun...
 visualization/.vscode/launch.json
 visualization/.vscode/settings.json
-package-lock.json
-Front/Html/dist/index.js
 Front/Html/dist/index.js.map
 Front/Html/dist/Js.c546e476.js
 Front/Html/dist/Js.c546e476.js.map

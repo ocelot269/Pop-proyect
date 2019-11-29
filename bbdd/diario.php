@@ -1,11 +1,33 @@
 <?php
-$data = file_get_contents("./diario.json");
-$diarios = json_decode($data,true);
-foreach ($diarios as $diario){
+
+
+
+class Diario {
+
+    private $data;
+    private $diarios;
+
+
+function __construct()
+{    
+    $this->data = file_get_contents("diario.json");
+    $this->diarios = json_decode($this->data,true);
+}
+
+function getActions () {
+$actions = [];
+$index = 0;
+foreach ($this->diarios as $diario){
     echo '<pre>';
-    print_r($diario);
+    $actions[$index] = [$diario['eventos'] ,  $diario['pulpo']]; 
     echo '</pre>';
+   $index++;
+}
+ return $actions;
+}
 
 
 }
+ 
 ?>
+

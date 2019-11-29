@@ -1,0 +1,43 @@
+$completo: 100%;
+$font-title: 'Fjalla One', serif;
+
+.grid {
+    display: grid;
+    grid-gap: 1em;
+    font-family: 'Noto Sans', sans-serif;
+    grid-template-areas:
+      "topnav"
+      "content"
+      "sidebar2"
+      "footer";
+    
+    .sidebar2 {
+      grid-area: sidebar2;
+    }
+    
+    .content {
+      grid-area: content;
+    }
+    
+    .topnav {
+      grid-area: topnav;
+      font-family: 'Fjalla One', serif;
+    }
+    
+    .footer {
+      grid-area: footer;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .grid {
+      grid-gap: 20px;
+      grid-template-columns: auto 300px;
+      grid-template-areas:
+        "topnav  topnav"
+        "content sidebar2"
+        "footer  footer";
+      max-width: 100%;
+    }
+}

@@ -212,3 +212,24 @@ input[type=submit]:hover {
   opacity: 0.8;
   background-color: #42898C;
 }
+
+/* Gráfico */
+
+.grafico {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.barra1 {
+  background-color: #054B4E;
+  height: 289px;
+}
+
+.barra2 {
+  background-color: #267276;
+}
+
+.barra3 {
+  background-color: #42898C;
+}

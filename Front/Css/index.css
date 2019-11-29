@@ -1,43 +1,0 @@
-.grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1em;
-  font-family: 'Noto Sans', sans-serif;
-      grid-template-areas: "topnav" "content" "sidebar2" "footer";
-}
-
-.grid .sidebar2 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: sidebar2;
-}
-
-.grid .content {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: content;
-}
-
-.grid .topnav {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: topnav;
-  font-family: 'Fjalla One', serif;
-}
-
-.grid .footer {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: footer;
-}
-
-@media only screen and (min-width: 600px) {
-  .grid {
-    grid-gap: 20px;
-    -ms-grid-columns: auto 300px;
-        grid-template-columns: auto 300px;
-        grid-template-areas: "topnav  topnav" "content sidebar2" "footer  footer";
-    max-width: 100%;
-  }
-}
-/*# sourceMappingURL=index.css.map */

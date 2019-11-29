@@ -66,6 +66,7 @@ function obtenerListadoEventosCorrelacion(DIARIO) {
     listadoEventosCorrelacion.push(calcularCorrelacion(registro,DIARIO));
   });
   console.log(listadoEventosCorrelacion);
+  return listadoEventosCorrelacion;
 }
 
 function calcularCorrelacion(registro, listaEventos) {

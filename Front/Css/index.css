@@ -1,4 +1,12 @@
 @charset "UTF-8";
+body {
+  width: 100%;
+}
+
+h1 {
+  font-family: "Fjalla One", serif;
+}
+
 /* Grid */
 .grid {
   display: -ms-grid;
@@ -24,7 +32,7 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: topnav;
-  font-family: 'Fjalla One', serif;
+  font-family: "Fjalla One", serif;
 }
 
 .grid .footer {

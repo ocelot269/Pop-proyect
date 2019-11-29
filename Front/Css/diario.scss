@@ -1,0 +1,73 @@
+/* Grid */
+
+.grid {
+    .titulo {
+        grid-area: titulo;
+    }
+
+    .dias {
+        grid-area: dias;
+    }
+
+    .semanas {
+        grid-area: semanas;
+    }
+
+    .topnav {
+        grid-area: topnav;
+        font-family: 'Fjalla One', serif;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    display: grid;
+    grid-gap: 1em;
+    font-family: 'Noto Sans',
+    sans-serif;
+    grid-template-areas: "topnav""titulo""dias""semanas""footer";
+}
+
+@media only screen and (min-width: 500px) {
+    .grid {
+        grid-template-areas: "topnav   topnav""titulo titulo""dias dias""semanas semanas""footer   footer";
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .grid {
+        grid-template-areas: "topnav  topnav  topnav""titulo titulo titulo""dias dias dias""semanas semanas semanas""footer  footer  footer";
+        max-width: 100%;
+    }
+}
+
+/* Días */
+
+.dias {
+    display: grid;
+    grid-template-areas: 
+    "Lunes Martes Miercoles Jueves Viernes Sabado Domingo";
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    font-family: 'Fjalla One', serif;
+}
+
+/* Semanas */
+
+.semanas {
+    display: grid;
+  
+    div {
+      display: flex;
+      align-items: center;
+  
+      p {
+        margin: 3px;
+        text-align: center;
+        border: 1px solid black;
+        flex-grow: 2;
+      }
+    }
+  }

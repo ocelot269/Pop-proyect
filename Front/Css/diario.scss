@@ -1,3 +1,6 @@
+$fontfamily-title: 'Fjalla One', serif;
+$fontfamily-general: 'Noto Sans', sans-serif;
+
 /* Grid */
 
 .grid {
@@ -15,7 +18,7 @@
 
     .topnav {
         grid-area: topnav;
-        font-family: 'Fjalla One', serif;
+        font-family: $fontfamily-title;
     }
 
     .footer {
@@ -24,8 +27,7 @@
 
     display: grid;
     grid-gap: 1em;
-    font-family: 'Noto Sans',
-    sans-serif;
+    font-family: $fontfamily-general;
     grid-template-areas: "topnav""titulo""dias""semanas""footer";
 }
 
@@ -51,7 +53,7 @@
     align-items: center;
     text-align: center;
     border: 1px solid black;
-    font-family: 'Fjalla One', serif;
+    font-family: $fontfamily-title;
 }
 
 /* Semanas */

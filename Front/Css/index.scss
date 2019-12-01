@@ -1,4 +1,9 @@
 $fontfamily-title: 'Fjalla One', serif;
+$fontfamily-general: 'Noto Sans', sans-serif;
+$color-background: #054B4E;
+$color-link: #f2f2f2;
+$color-active: #267276;
+$color-hover: #42898C;
 
 h1 {
     font-family: $fontfamily-title;
@@ -26,8 +31,7 @@ h1 {
 
     display: grid;
     grid-gap: 1em;
-    font-family: 'Noto Sans',
-    sans-serif;
+    font-family: $fontfamily-general;
     grid-template-areas: "topnav""content""sidebar2""footer";
 }
 
@@ -44,12 +48,12 @@ h1 {
 
 .topnav {
     overflow: hidden;
-    background-color: #054B4E;
+    background-color: $color-background;
 
     a {
         float: left;
         display: block;
-        color: #f2f2f2;
+        color: $color-link;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -66,7 +70,7 @@ h1 {
 }
 
 .active {
-    background-color: #267276;
+    background-color: $color-active;
     color: white;
 }
 
@@ -108,7 +112,7 @@ h1 {
 
 .topnav a:hover,
 .dropdown:hover .dropbtn {
-    background-color: #42898C;
+    background-color: $color-hover;
     color: white;
 }
 
@@ -167,8 +171,8 @@ h1 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #054B4E;
-    color: #f2f2f2;
+    background-color: $color-background;
+    color: $color-link;
     text-align: center;
 
     .contenido .nombres .redes {
@@ -204,12 +208,12 @@ input[type=submit] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: $fontfamily-general;
 }
 
 input[type=submit]:hover {
     opacity: 0.8;
-    background-color: #42898C;
+    background-color: $color-hover;
 }
 
 /* Gráfico */
@@ -220,15 +224,15 @@ input[type=submit]:hover {
     flex-direction: row;
 
     .barra1 {
-        background-color: #054B4E;
+        background-color: $color-background;
         height: 289px;
     }
 
     .barra2 {
-        background-color: #267276;
+        background-color: $color-active;
     }
 
     .barra3 {
-        background-color: #42898C;
+        background-color: $color-hover;
     }
 }

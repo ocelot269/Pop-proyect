@@ -7,15 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/Css.85e04df5.css">
+    <link rel="stylesheet" type="text/css" href="/Css.85e04df5.css"> 
+    <link rel="stylesheet" type="text/css" href="/diario.097239e2.css"> 
     <title>Proyecto POP</title>
-<script src="/Css.85e04df5.js"></script><script src="/diario.js"></script></head>
+<script src="/diario.097239e2.js"></script><script src="/correlaciones.js"></script></head>
 
 <body>
     <div class="grid">
         <div class="topnav" id="myTopnav">
-            <a href="/index.html" class="active">Inicio</a>
-            <a href="/diario.html">Diario</a>
+            <a href="/index.html">Inicio</a>
+            <a href="/diario.html" class="active">Diario</a>
             <a href="/correlaciones.html">Correlaciones</a>
             <a href="" id="login"><i class="fa fa-fw fa-user"></i> Login</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
@@ -29,28 +30,39 @@
     x.className = "topnav";
   }
 }</script>
-        <div class="sidebar2">
-            <h1>Subscribete a nuestra Newsletter</h1>
-            <form action="newsletter.html">
-                <div class="container">
-                    <p>¿Quieres estar al día con las transformaciones de Mariano?</p>
-                    <p>Subscribete y estarás informado si Mariano se convierte o no en Pulpo.</p>
-                    <p>Además, recibirás información exclusiva sobre los nuevos descubrimientos que hagamos.</p>
-                </div>
-                <div class="container">
-                    <input type="text" placeholder="Name" name="name" required="">
-                    <input type="text" placeholder="Email address" name="mail" required=""><br>
-                    <input type="submit" value="Subscribe">
-                </div>
-            </form>
+        <div class="titulo">
+            <h1>Diario de eventos de Mariano</h1>
         </div>
-        <div class="content">
-            <h1>¿Que eventos tienen más influencia en su tranformación?</h1>
-            <div class="grafico">
-                <div class="barra1">f</div>
-                <div class="barra2">f</div>
-                <div class="barra3">f</div>
-            </div>
+        <div class="dias">
+            <div>Lunes</div>
+            <div>Martes</div>
+            <div>Miércoles</div>
+            <div>Jueves</div>
+            <div>Viernes</div>
+            <div>Sábado</div>
+            <div>Domingo</div>
+        </div>
+        <div class="semanas">
+            <script>for (var index = 0; index < 90; index++) {
+  var lista = document.querySelector('.semanas');
+  var row = document.createElement("div"); // condicion para dividirlo en 7 las filas
+
+  if (index % 7 == 0) {
+    lista.appendChild(row); // for para las filas
+
+    for (var indice = 1; indice <= 7; indice++) {
+      var cell = document.createElement("p"); // celda con los numeros
+
+      row.appendChild(cell);
+
+      if (index + indice < 10) {
+        cell.innerHTML = '0' + String(index + indice);
+      } else {
+        cell.innerHTML = index + indice;
+      }
+    }
+  }
+}</script>
         </div>
         <div class="footer">
             <div class="contenido" style="flex-grow: 5; justify-content: flex-start">
@@ -75,6 +87,6 @@
         </div>
     </div>
 </body>
-<script src="/js.3a62e90a.js"></script>
+<script src="/Js.c546e476.js"></script>
 
 </html>

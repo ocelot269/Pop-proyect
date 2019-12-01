@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* Grid */
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+  font-family: 'Noto Sans', sans-serif;
+      grid-template-areas: "topnav" "titulo" "dias" "semanas" "footer";
+}
+
+.grid .titulo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: titulo;
+}
+
+.grid .dias {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: dias;
+}
+
+.grid .semanas {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: semanas;
+}
+
+.grid .topnav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: topnav;
+  font-family: 'Fjalla One', serif;
+}
+
+.grid .footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+
+@media only screen and (min-width: 500px) {
+  .grid {
+        grid-template-areas: "topnav   topnav" "titulo titulo" "dias dias" "semanas semanas" "footer   footer";
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .grid {
+        grid-template-areas: "topnav  topnav  topnav" "titulo titulo titulo" "dias dias dias" "semanas semanas semanas" "footer  footer  footer";
+    max-width: 100%;
+  }
+}
+
+/* Días */
+.dias {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "Lunes Martes Miercoles Jueves Viernes Sabado Domingo";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  font-family: 'Fjalla One', serif;
+}
+
+/* Semanas */
+.semanas {
+  display: -ms-grid;
+  display: grid;
+}
+
+.semanas div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.semanas div p {
+  margin: 3px;
+  text-align: center;
+  border: 1px solid black;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+
+/*# sourceMappingURL=/diario.097239e2.css.map */

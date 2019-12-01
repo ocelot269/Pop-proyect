@@ -23,14 +23,10 @@
          // Cerramos la query
          $query->closeCursor();
 
-         // Y devolvemos los resultados para la función
-		 $data = array();
-		// obtenemos los datos:
-		$data[] = array(
-		    $resultado[0]['eventos']
-		  );
+   		// obtenemos los datos:
+
         
-         return json_encode($data[0]);
+         return $resultado;
 
          // Vaciamos el objeto connectionDb
          $this->connectionDb = null;

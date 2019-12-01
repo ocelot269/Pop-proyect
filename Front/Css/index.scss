@@ -218,21 +218,29 @@ input[type=submit]:hover {
 
 /* Gráfico */
 
-.grafico {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-
-    .barra1 {
+.grafica {
+    .bar1 {
+        grid-area: bar1;
         background-color: $color-background;
-        height: 289px;
+        width: 25%;
     }
 
-    .barra2 {
+    .bar2 {
+        grid-area: bar2;
         background-color: $color-active;
+        width: 35%;
     }
 
-    .barra3 {
+    .bar3 {
+        grid-area: bar3;
         background-color: $color-hover;
+        width: 80%;
     }
+
+    display: grid;
+    grid-template-areas: 
+    "bar1"
+    "bar2"
+    "bar3";
+    grid-gap: 1em;
 }

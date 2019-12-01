@@ -6,6 +6,7 @@
       $conexion = new Database();
       // Usamos try and catch para controlar los errores
       try {
+      	header("access-control-allow-origin: *");
         
          // Variable que contiene la sentencia SQL para MySQL
          //$sql = "INSERT INTO `diario` (`id`, `pulpo`, `eventos`) VALUES (NULL, \'1\', \'  {\\r\\n    \\\"eventos\\\": [\\r\\n      \\\"mejillones\\\",\\r\\n      \\\"chinchos\\\",\\r\\n      \\\"me lave los dientes\\\",\\r\\n      \\\"Panorama\\\",\\r\\n      \\\"siesta con La Vuelta\\\"\\r\\n    ],\\r\\n    \\\"pulpo\\\": false\\r\\n  }\')";
@@ -23,8 +24,13 @@
          $query->closeCursor();
 
          // Y devolvemos los resultados para la función
+		 $data = array();
+		// obtenemos los datos:
+		$data[] = array(
+		    $resultado[0]['eventos']
+		  );
         
-         return $resultado;
+         return json_encode($data[0]);
 
          // Vaciamos el objeto connectionDb
          $this->connectionDb = null;

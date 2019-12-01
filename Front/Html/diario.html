@@ -48,12 +48,19 @@
                 for (var index = 0; index < 90; index++) {
                     var lista = document.querySelector('.semanas');
                     var row = document.createElement("div");
+                    // condicion para dividirlo en 7 las filas
                     if (index % 7 == 0) {
                         lista.appendChild(row);
+                        // for para las filas
                         for (var indice = 1; indice <= 7; indice++) {
                             var cell = document.createElement("p");
+                            // celda con los numeros
                             row.appendChild(cell);
-                            cell.innerHTML = index + indice;
+                            if (index + indice < 10) {
+                                cell.innerHTML = '0' + String(index + indice);
+                            }else{
+                                cell.innerHTML = index + indice;
+                            }
                         }
                     }
                 }

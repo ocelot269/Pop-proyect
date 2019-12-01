@@ -3,10 +3,11 @@
 
 
 let proyecto = require('./proyecto');
-let ajax = require('./ajax');
+let diarioService = require('./diarioService');
 let diario = require('../../diario');
+let crearTablaCorrelaciones = require('./tablaCorrelacion');
 
 //set de acciones
 proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
-proyecto.crearTablaCorrelaciones(proyecto.listadoEventosConValores);
-ajax.ajax();
+crearTablaCorrelaciones.crearTablaCorrelaciones(proyecto.listadoEventosConValores); 
+diarioService.diarioService();

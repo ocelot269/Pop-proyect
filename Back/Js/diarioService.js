@@ -1,7 +1,7 @@
-function ajax() {
+function diarioService() {
     // Creación de la petición HTTP
 var req = new XMLHttpRequest();
-// Petición HTTP GET síncrona hacia el archivo fotos.json del servidor
+// Petición HTTP GET síncrona hacia el archivo diario.json del servidor
 req.open("GET", "http://localhost/Pop-proyect/bbdd/crud.php", false);
 // Envío de la petición
 req.send(null);
@@ -10,5 +10,5 @@ console.log(req.responseText);
 }
 
 module.exports = {
-    ajax: ajax
+    diarioService: diarioService
 }

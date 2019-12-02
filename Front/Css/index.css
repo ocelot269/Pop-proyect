@@ -216,7 +216,9 @@ input[type=submit]:hover {
 .grafica {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "bar1" "bar2" "bar3";
+      grid-template-areas: "bar1"
+ "bar2"
+ "bar3";
   grid-gap: 1em;
 }
 
@@ -243,4 +245,5 @@ input[type=submit]:hover {
   background-color: #42898C;
   width: 80%;
 }
+
 /*# sourceMappingURL=index.css.map */

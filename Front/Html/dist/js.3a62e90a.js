@@ -129,7 +129,7 @@ module.exports = {
   phi: phi
 };
 },{}],"../../back/js/proyecto.js":[function(require,module,exports) {
-var phi = require('./phi');
+var phi = require("./phi");
 
 var listadoEventosCorrelacion = new Array(); // listado de todos los diferentes eventos que hay en el diario
 
@@ -142,57 +142,13 @@ var obtenerSetEventosDiario = function obtenerSetEventosDiario(DIARIO) {
   });
   return acciones;
 };
-/* function crearTablaCorrelaciones() {
-  //body reference
-  let body = document.getElementsByTagName("body")[0];
-
-  // create elements <table> and a <tbody>
-  let tbl = document.createElement("table");
-  let tblBody = document.createElement("tbody");
-
-  // cells creation
-  for (let tr = 0; tr < listadoEventosCorrelacion.length; tr++) {
-    
-    // table row creation
-    let row = document.createElement("tr");
-    //accion posicion
-    const eventoPulpo = listadoEventosCorrelacion[tr];
-    //listado de las propiedades
-    const eventoPulpoValues = Object.values(eventoPulpo);
-
-      for (const key in eventoPulpoValues) {
-
-        if (listadoEventosCorrelacion.hasOwnProperty(key)) {         
-          console.log(eventoPulpoValues[key]);
-          // create element <td> and text node
-          //Make text node the contents of <td> element
-          // put <td> at end of the table row
-          let cell = document.createElement("td");
-          let cellText = document.createTextNode(eventoPulpoValues[key]);
-          cell.appendChild(cellText);
-          row.appendChild(cell);
-        }
-
-      }
-      
-    //row added to end of table body
-    tblBody.appendChild(row);
-  }
-
-  // append the <tbody> inside the <table>
-  tbl.appendChild(tblBody);
-  // put <table> in the <body>
-  body.appendChild(tbl);
-  // tbl border attribute to
-  tbl.setAttribute("border", "2");
-} */
-
 
 function obtenerListadoEventosCorrelacion(DIARIO) {
   obtenerSetEventosDiario(DIARIO).forEach(function (registro) {
     listadoEventosCorrelacion.push(calcularCorrelacion(registro, DIARIO));
   });
-  console.log(listadoEventosCorrelacion);
+  /*   console.log(listadoEventosCorrelacion); */
+
   return listadoEventosCorrelacion;
 }
 
@@ -217,18 +173,54 @@ function calcularCorrelacion(registro, listaEventos) {
     n11: n11,
     phi: eventos.prototype.phi(n00, n01, n10, n11)
   };
+} // te devuelve las correlaciones mas altas
+
+
+function obtenerMayoresCorrelaciones() {
+  var numero = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var eventosOrdenadosPhi = [];
+  var arrayOrdenadoEventos = [];
+  var numeroEventosOrdenados = [];
+  listadoEventosCorrelacion.forEach(function (evento) {
+    eventosOrdenadosPhi.push(evento.phi);
+  }); // eventos ordenados por phi
+
+  eventosOrdenadosPhi.sort().reverse();
+  numeroEventosOrdenados = eventosOrdenadosPhi.splice(0, numero); // copia del numero seleccionado
+
+  listadoEventosCorrelacion.forEach(function (evento) {
+    numeroEventosOrdenados.forEach(function (element) {
+      if (element === evento.phi) {
+        arrayOrdenadoEventos.push(evento.phi);
+      }
+    });
+  });
+  arrayOrdenadoEventos.sort().reverse(); // pusheado objetos en array
+
+  eventosOrdenadosPhi = [];
+  arrayOrdenadoEventos.forEach(function (element) {
+    listadoEventosCorrelacion.forEach(function (evento) {
+      if (evento.phi === element) {
+        eventosOrdenadosPhi.push({
+          nombre: evento.nombre,
+          phi: evento.phi
+        });
+      }
+    });
+  });
+  console.log(eventosOrdenadosPhi);
+  return eventosOrdenadosPhi;
 }
 
 function mostrarCorrelacion() {
   listadoEventosCorrelacion.forEach(function (elemento) {
-    console.log(elemento);
+    /*   console.log(elemento); */
   });
 }
 
 module.exports = {
+  obtenerMayoresCorrelaciones: obtenerMayoresCorrelaciones,
   obtenerSetEventosDiario: obtenerSetEventosDiario,
-
-  /*   crearTablaCorrelaciones: crearTablaCorrelaciones, */
   obtenerListadoEventosCorrelacion: obtenerListadoEventosCorrelacion,
   calcularCorrelacion: calcularCorrelacion,
   mostrarCorrelacion: mostrarCorrelacion,
@@ -524,12 +516,12 @@ var DIARIO = [{
 module.exports = {
   DIARIO: DIARIO
 };
-},{}],"../../back/js/tablaCorrelacion.js":[function(require,module,exports) {
-var correlacion = require('./proyecto');
+},{}],"../../back/js/dom.js":[function(require,module,exports) {
+var correlacion = require("./proyecto");
 
 function crearTablaCorrelaciones() {
   //body reference
-  var body = document.getElementsByTagName("body")[0]; // create elements <table> and a <tbody>
+  var body = document.getElementById("tabla"); // create elements <table> and a <tbody>
 
   var tbl = document.createElement("table");
   var tblBody = document.createElement("tbody"); // cells creation
@@ -544,10 +536,10 @@ function crearTablaCorrelaciones() {
 
     for (var key in eventoPulpoValues) {
       if (correlacion.listadoEventosCorrelacion.hasOwnProperty(key)) {
-        console.log(eventoPulpoValues[key]); // create element <td> and text node
+        /* console.log(eventoPulpoValues[key]); */
+        // create element <td> and text node
         //Make text node the contents of <td> element
         // put <td> at end of the table row
-
         var cell = document.createElement("td");
         var cellText = document.createTextNode(eventoPulpoValues[key]);
         cell.appendChild(cellText);
@@ -567,8 +559,54 @@ function crearTablaCorrelaciones() {
   tbl.setAttribute("border", "2");
 }
 
+function crearValoresGraficaPorLista(lista) {
+  var listado = lista;
+  console.log(listado);
+  var grafica = document.getElementsByClassName("grafica");
+
+  if (grafica[0]) {
+    var index = 0;
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = grafica[0].children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var elemento = _step.value;
+        // añades el nombre
+        elemento.innerText = listado[index].nombre;
+        numero = listado[index].phi; // conversion a string y extraemos parte decimal
+
+        numero = String(numero).substring(2, 4); // estilo modificado
+
+        elemento.style.width = numero + "%";
+        index++;
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+}
+
+function prueba() {
+  console.log("mariano");
+}
+
 module.exports = {
-  crearTablaCorrelaciones: crearTablaCorrelaciones
+  prueba: prueba,
+  crearTablaCorrelaciones: crearTablaCorrelaciones,
+  crearValoresGraficaPorLista: crearValoresGraficaPorLista
 };
 },{"./proyecto":"../../back/js/proyecto.js"}],"../../back/js/index.js":[function(require,module,exports) {
 /* import '../../front/Css/index.css'; */
@@ -580,13 +618,16 @@ var diarioService = require('./diarioService');
 
 var diario = require('../../diario');
 
-var crearTablaCorrelaciones = require('./tablaCorrelacion'); //set de acciones
+var dom = require('./dom'); //set de acciones
 
 
 proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
-crearTablaCorrelaciones.crearTablaCorrelaciones(proyecto.listadoEventosConValores);
+proyecto.obtenerMayoresCorrelaciones(3);
+dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones());
+dom.crearTablaCorrelaciones(proyecto.listadoEventosConValores);
+dom.prueba();
 diarioService.diarioService();
-},{"./proyecto":"../../back/js/proyecto.js","./diarioService":"../../back/js/diarioService.js","../../diario":"../../diario.js","./tablaCorrelacion":"../../back/js/tablaCorrelacion.js"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./proyecto":"../../back/js/proyecto.js","./diarioService":"../../back/js/diarioService.js","../../diario":"../../diario.js","./dom":"../../back/js/dom.js"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -614,7 +655,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58684" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54751" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

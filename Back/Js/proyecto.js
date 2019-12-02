@@ -16,7 +16,7 @@ function obtenerListadoEventosCorrelacion(DIARIO) {
   obtenerSetEventosDiario(DIARIO).forEach(registro => {
     listadoEventosCorrelacion.push(calcularCorrelacion(registro, DIARIO));
   });
-  console.log(listadoEventosCorrelacion);
+/*   console.log(listadoEventosCorrelacion); */
   return listadoEventosCorrelacion;
 }
 
@@ -44,13 +44,51 @@ function calcularCorrelacion(registro, listaEventos) {
   };
 }
 
+// te devuelve las correlaciones mas altas
+function obtenerMayoresCorrelaciones(numero= 3) {
+  let eventosOrdenadosPhi = [];
+  let arrayOrdenadoEventos = [];
+  let numeroEventosOrdenados= [];
+  listadoEventosCorrelacion.forEach(evento => {
+    eventosOrdenadosPhi.push(evento.phi);
+    
+  });
+  // eventos ordenados por phi
+  eventosOrdenadosPhi.sort().reverse();
+  numeroEventosOrdenados = eventosOrdenadosPhi.splice(0,numero);
+  
+  // copia del numero seleccionado
+  listadoEventosCorrelacion.forEach(evento => {
+    numeroEventosOrdenados.forEach(element => {
+      if (element === evento.phi) {
+        arrayOrdenadoEventos.push(evento.phi);
+    }
+    });
+  });
+  arrayOrdenadoEventos.sort().reverse();
+  // pusheado objetos en array
+  eventosOrdenadosPhi = [];
+  arrayOrdenadoEventos.forEach(element => {
+    listadoEventosCorrelacion.forEach(evento => {
+      if (evento.phi === element) {
+          eventosOrdenadosPhi.push({nombre: evento.nombre, phi: evento.phi});
+      }
+    });
+  });
+  console.log(eventosOrdenadosPhi);
+  return eventosOrdenadosPhi;
+ }
+
+
+
 function mostrarCorrelacion() {
   listadoEventosCorrelacion.forEach(elemento => {
-    console.log(elemento);
+  /*   console.log(elemento); */
   });
 }
 
 module.exports = {
+  obtenerMayoresCorrelaciones: obtenerMayoresCorrelaciones,
   obtenerSetEventosDiario: obtenerSetEventosDiario,
   obtenerListadoEventosCorrelacion: obtenerListadoEventosCorrelacion,
   calcularCorrelacion: calcularCorrelacion,

@@ -4,7 +4,7 @@
   display: -ms-grid;
   display: grid;
   grid-gap: 1em;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
       grid-template-areas: "topnav" "titulo" "dias" "semanas" "footer";
 }
 
@@ -30,7 +30,7 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: topnav;
-  font-family: 'Fjalla One', serif;
+  font-family: "Fjalla One", serif;
 }
 
 .grid .footer {
@@ -62,7 +62,7 @@
           align-items: center;
   text-align: center;
   border: 1px solid black;
-  font-family: 'Fjalla One', serif;
+  font-family: "Fjalla One", serif;
 }
 
 /* Semanas */
@@ -87,6 +87,13 @@
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
+}
+
+.rajoy {
+  background-repeat: no-repeat; 
+  background-image: url(http://s.libertaddigital.com/fotos/noticias/954/0/rajoy_pulpo_14082011.jpg);
+  width: auto;
+  height: 500px;
 }
 
 

@@ -11,34 +11,34 @@
 4. [Información](#información)
 
 
-## Desarrollo en Entorno Cliente<a id="cliente"></a>
+## 1. Desarrollo en Entorno Cliente<a id="cliente"></a>
 Texto del primer apartado
 
 
-## Despliegue de la Aplicación Web<a id="despliegue"></a>
+## 2. Despliegue de la Aplicación Web<a id="despliegue"></a>
 Texto del segundo apartado
 
 
-## Diseño de Interfaces<a id="interfaces"></a>
-### Diseño de la interfaz<a id="diseñoInt"></a>
+## 3. Diseño de Interfaces<a id="interfaces"></a>
+### 3.1. Diseño de la interfaz<a id="diseñoInt"></a>
 
-#### Explicación del diseño de las diferentes interfaces (Escritorio, móvil, tablet...)
+#### 3.1.1. Explicación del diseño de las diferentes interfaces (Escritorio, móvil, tablet...)
 ----
 
-#### Cambios que ocurren cuando el usuario cambia de una interfaz a otra
+#### 3.1.2. Cambios que ocurren cuando el usuario cambia de una interfaz a otra
 ----
 
-#### Puntos de interrupción
+#### 3.1.3. Puntos de interrupción
 ---
 
-### Css GRID y Css Flexbox<a id="css"></a>
+### 3.2. Css GRID y Css Flexbox<a id="css"></a>
 
-### Tipografía utilizada<a id="tipografia"></a>
+### 3.3. Tipografía utilizada<a id="tipografia"></a>
 
-### Paleta de colores<a id="colores"></a>
+### 3.4. Paleta de colores<a id="colores"></a>
 
 
-## Información<a id="información"></a>
+## 4. Información<a id="información"></a>
 ***Nombres de los autores:*** Jose Antonio Zamora Andrés y Sandra Cabrera García
 
 ***Curso:*** 2º Desarrollo de Aplicaciones Web

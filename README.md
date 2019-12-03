@@ -16,7 +16,9 @@ Texto del primer apartado
 
 
 ## 2. Despliegue de la Aplicación Web<a id="despliegue"></a>
-Texto del segundo apartado
+La documentación se podrá encontrar aqui:
+
+https://docs.google.com/document/d/1zNieCK8W2y5TGMrqelVzl2OGJVB7lNgssOU4jdh1PEQ/edit?usp=sharing
 
 
 ## 3. Diseño de Interfaces<a id="interfaces"></a>

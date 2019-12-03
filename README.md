@@ -35,7 +35,19 @@ https://docs.google.com/document/d/1zNieCK8W2y5TGMrqelVzl2OGJVB7lNgssOU4jdh1PEQ/
 
 ### 3.2. Css GRID y Css Flexbox<a id="css"></a>
 
+Se ha creado una base fija con ***Grid***, ya que hemos considerado que es más sencillo y más practico a la hora de hacerlo responsive. Nuestra base fija consta de 3 partes, el *navbar* que se encuentra en la parte superior y ocupa todo. Luego encontramos la parte central, la cual dependiendo de la página en la que te encuentres, hay más partes o menos. En el index, por ejemplo, hay dos partes, la del contenido y la del sidebar, que tiene como contenido el Newsletter. En cambio, la del diario solo tiene el contenido, que ocupa toda la parte central.
+
+Finalmente encontramos el *footer*, el cual para situar cada parte ha sido utilizado ***flexbox***, por el hecho de que fuese más sencillo definir y colocar cada columna donde queriamos. 
+
+También se ha hecho uso tanto de ***Grid*** como de ***Flexbox***, en la parte del diario. Ya que la fila donde se encuentran los nombres de los días esta creada con ***Grid***. Las filas, donde podemos ver los números, está creada con una estructura de ***Grid*** y dentro utilizamos ***Flexbox*** para poder situar cada día en su respectiva posición. Se ha creado la estructura con ***Grid*** porque al hacerlo en formato móvil o tablet, es más sencillo que con ***Flexbox***.
+
+En la gráfica se utiliza ***Flexbox***.
+
 ### 3.3. Tipografía utilizada<a id="tipografia"></a>
+
+Se han utilizado dos tipografías. 
+
+Para el cuerpo utilizamos Noto Sans
 
 ### 3.4. Paleta de colores<a id="colores"></a>
 

@@ -1,10 +1,11 @@
 let correlacion = require("./proyecto");
 
 function crearTablaCorrelaciones() {
-  //body reference
-  let body = document.getElementById("tabla");
+  //div tabla reference
+  if (document.getElementById("tabla")) {
+  let tabla = document.getElementById("tabla");
 
-  // create elements <table> and a <tbody>
+  // create elements <table> and a <ttabla>
   let tbl = document.createElement("table");
   let tblBody = document.createElement("tbody");
 
@@ -29,26 +30,26 @@ function crearTablaCorrelaciones() {
         row.appendChild(cell);
       }
     }
-
     //row added to end of table body
     tblBody.appendChild(row);
   }
 
   // append the <tbody> inside the <table>
   tbl.appendChild(tblBody);
-  // put <table> in the <body>
-  body.appendChild(tbl);
+  // put <table> in the <div>
+  tabla.appendChild(tbl);
   // tbl border attribute to
   tbl.setAttribute("border", "2");
+}
 }
 
 function crearValoresGraficaPorLista(lista) {
   let listado = lista;
-  console.log(listado);
   let grafica = document.getElementsByClassName("grafica");
   if (grafica[0]) {
     let index = 0;
     for (const elemento of grafica[0].children) {
+      console.log(elemento);
       // añades el nombre
       elemento.innerText = listado[index].nombre;
       numero = listado[index].phi;

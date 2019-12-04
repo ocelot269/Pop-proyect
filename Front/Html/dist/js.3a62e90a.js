@@ -228,14 +228,19 @@ module.exports = {
 };
 },{"./phi":"../../back/js/phi.js"}],"../../back/js/diarioService.js":[function(require,module,exports) {
 function diarioService() {
-  // Creación de la petición HTTP
-  var req = new XMLHttpRequest(); // Petición HTTP GET síncrona hacia el archivo diario.json del servidor
+  try {
+    // Creación de la petición HTTP
+    var req = new XMLHttpRequest();
+    req.contextType = "json"; // Petición HTTP GET síncrona hacia el archivo diario.json del servidor
 
-  req.open("GET", "http://localhost/Pop-proyect/bbdd/crud.php", false); // Envío de la petición
+    req.open("GET", "http://localhost/Pop-proyect/bbdd/crud.php", false); // Envío de la petición
 
-  req.send(null); // Impresión por la consola de la respuesta recibida desde el servidor
+    req.send(null); // Impresión por la consola de la respuesta recibida desde el servidor
 
-  console.log(req.responseText);
+    console.log(req.responseText);
+  } catch (errorServer) {
+    console.log('error en el servidor' + errorServer);
+  }
 }
 
 module.exports = {
@@ -520,48 +525,49 @@ module.exports = {
 var correlacion = require("./proyecto");
 
 function crearTablaCorrelaciones() {
-  //body reference
-  var body = document.getElementById("tabla"); // create elements <table> and a <tbody>
+  //div tabla reference
+  if (document.getElementById("tabla")) {
+    var tabla = document.getElementById("tabla"); // create elements <table> and a <ttabla>
 
-  var tbl = document.createElement("table");
-  var tblBody = document.createElement("tbody"); // cells creation
+    var tbl = document.createElement("table");
+    var tblBody = document.createElement("tbody"); // cells creation
 
-  for (var tr = 0; tr < correlacion.listadoEventosCorrelacion.length; tr++) {
-    // table row creation
-    var row = document.createElement("tr"); //accion posicion
+    for (var tr = 0; tr < correlacion.listadoEventosCorrelacion.length; tr++) {
+      // table row creation
+      var row = document.createElement("tr"); //accion posicion
 
-    var eventoPulpo = correlacion.listadoEventosCorrelacion[tr]; //listado de las propiedades
+      var eventoPulpo = correlacion.listadoEventosCorrelacion[tr]; //listado de las propiedades
 
-    var eventoPulpoValues = Object.values(eventoPulpo);
+      var eventoPulpoValues = Object.values(eventoPulpo);
 
-    for (var key in eventoPulpoValues) {
-      if (correlacion.listadoEventosCorrelacion.hasOwnProperty(key)) {
-        /* console.log(eventoPulpoValues[key]); */
-        // create element <td> and text node
-        //Make text node the contents of <td> element
-        // put <td> at end of the table row
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(eventoPulpoValues[key]);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-      }
-    } //row added to end of table body
-
-
-    tblBody.appendChild(row);
-  } // append the <tbody> inside the <table>
+      for (var key in eventoPulpoValues) {
+        if (correlacion.listadoEventosCorrelacion.hasOwnProperty(key)) {
+          /* console.log(eventoPulpoValues[key]); */
+          // create element <td> and text node
+          //Make text node the contents of <td> element
+          // put <td> at end of the table row
+          var cell = document.createElement("td");
+          var cellText = document.createTextNode(eventoPulpoValues[key]);
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+        }
+      } //row added to end of table body
 
 
-  tbl.appendChild(tblBody); // put <table> in the <body>
+      tblBody.appendChild(row);
+    } // append the <tbody> inside the <table>
 
-  body.appendChild(tbl); // tbl border attribute to
 
-  tbl.setAttribute("border", "2");
+    tbl.appendChild(tblBody); // put <table> in the <div>
+
+    tabla.appendChild(tbl); // tbl border attribute to
+
+    tbl.setAttribute("border", "2");
+  }
 }
 
 function crearValoresGraficaPorLista(lista) {
   var listado = lista;
-  console.log(listado);
   var grafica = document.getElementsByClassName("grafica");
 
   if (grafica[0]) {
@@ -573,7 +579,8 @@ function crearValoresGraficaPorLista(lista) {
     try {
       for (var _iterator = grafica[0].children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var elemento = _step.value;
-        // añades el nombre
+        console.log(elemento); // añades el nombre
+
         elemento.innerText = listado[index].nombre;
         numero = listado[index].phi; // conversion a string y extraemos parte decimal
 
@@ -623,9 +630,8 @@ var dom = require('./dom'); //set de acciones
 
 proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
 proyecto.obtenerMayoresCorrelaciones(3);
-dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones());
+dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones(5));
 dom.crearTablaCorrelaciones(proyecto.listadoEventosConValores);
-dom.prueba();
 diarioService.diarioService();
 },{"./proyecto":"../../back/js/proyecto.js","./diarioService":"../../back/js/diarioService.js","../../diario":"../../diario.js","./dom":"../../back/js/dom.js"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -655,7 +661,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54047" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

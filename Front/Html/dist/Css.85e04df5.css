@@ -216,9 +216,7 @@ input[type=submit]:hover {
 .grafica {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "bar1"
- "bar2"
- "bar3";
+      grid-template-areas: "bar1" "bar2" "bar3" "bar4" "bar5";
   grid-gap: 1em;
 }
 
@@ -246,6 +244,21 @@ input[type=submit]:hover {
   width: 80%;
 }
 
+.grafica .bar4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: bar4;
+  background-color: #42898C;
+  width: 60%;
+}
+
+.grafica .bar5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: bar5;
+  background-color: #42898C;
+  width: 50%;
+}
 
 
 /*# sourceMappingURL=/Css.85e04df5.css.map */

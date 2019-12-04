@@ -237,10 +237,24 @@ input[type=submit]:hover {
         width: 80%;
     }
 
+    .bar4 {
+        grid-area: bar4;
+        background-color: $color-hover;
+        width: 60%;
+    }
+
+    .bar5 {
+        grid-area: bar5;
+        background-color: $color-hover;
+        width: 50%;
+    }
+
     display: grid;
     grid-template-areas: 
     "bar1"
     "bar2"
-    "bar3";
+    "bar3"
+    "bar4"
+    "bar5";
     grid-gap: 1em;
 }

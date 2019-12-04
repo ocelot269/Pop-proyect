@@ -45,9 +45,11 @@ En la gráfica se utiliza ***Flexbox***.
 
 ### 3.3. Tipografía utilizada<a id="tipografia"></a>
 
-Se han utilizado dos tipografías. 
+Se han utilizado dos tipografías cogidas desde [Google Fonts](https://fonts.google.com/). 
 
-Para el cuerpo utilizamos Noto Sans
+Para el cuerpo utilizamos [Noto Sans](https://fonts.google.com/specimen/Noto+Sans). Queríamos utilizar una tipografía que fuese fácil de leer y que no quedase muy cargada la página. Decidimos decantarnos por esta porque vimos que era bastante normal, pero a la vez es divertida y fuera de lo habitual.
+
+Después para los títulos utilizamos [Fjalla One](https://fonts.google.com/specimen/Fjalla+One). Vimos que encajaba bastante bien con la que habíamos decidido para el cuerpo y que era diferente a las demás. También consideramos que resaltaba muy bien en titulo. 
 
 ### 3.4. Paleta de colores<a id="colores"></a>
 

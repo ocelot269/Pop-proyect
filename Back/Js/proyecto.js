@@ -2,62 +2,72 @@ let phi = require("./phi");
 
 let listadoEventosCorrelacion = new Array();
 // listado de todos los diferentes eventos que hay en el diario
-var obtenerSetEventosDiario = DIARIO => {
+let obtenerSetEventosDiario = diario => {
   let acciones = new Set([]);
-  DIARIO.forEach(evento => {
+  console.assert(diario , 'no contiene valor');
+  diario.forEach(evento => {
     evento.eventos.forEach(accion => {
       acciones.add(accion);
     });
   });
+  console.assert(acciones.size > 0 , 'no contiene valor');
   return acciones;
 };
 
-function obtenerListadoEventosCorrelacion(DIARIO) {
-  obtenerSetEventosDiario(DIARIO).forEach(registro => {
-    listadoEventosCorrelacion.push(calcularCorrelacion(registro, DIARIO));
+function obtenerListadoEventosCorrelacion(diario) {
+  obtenerSetEventosDiario(diario).forEach(elemento => {
+    listadoEventosCorrelacion.push(calcularCorrelacion(elemento, diario));
   });
-/*   console.log(listadoEventosCorrelacion); */
+  console.assert(listadoEventosCorrelacion.length !== 0 , 'no contiene valor');
   return listadoEventosCorrelacion;
 }
 
-function calcularCorrelacion(registro, listaEventos) {
+function calcularCorrelacion(elemento, listaEventos) {
   let n01 = 0,
-    n11 = 0,
-    n10 = 0,
-    n00 = 0;
+      n11 = 0,
+      n10 = 0,
+      n00 = 0;
+
+  console.assert(elemento , 'es un nulo o undefined o vacio');   
+  console.assert(listaEventos.length > 0, 'es una lista vacia');   
   listaEventos.forEach(evento => {
-    if (evento.eventos.includes(registro)) {
+    if (evento.eventos.includes(elemento)) {
       evento.pulpo ? n11++ : n01++;
-    } else if (!evento.eventos.includes(registro)) {
+    } else if (!evento.eventos.includes(elemento)) {
       evento.pulpo ? n10++ : n00++;
     }
   });
 
-  eventos = Object.create(phi.phi);
+  console.assert(elemento , 'es un nulo o undefined o vacio');   
+  eventos = Object.create(phi.calcularCorrelacion);
+  
   return {
-    nombre: registro,
+    nombre: elemento,
     n00: n00,
     n01: n01,
     n10: n10,
     n11: n11,
-    phi: eventos.prototype.phi(n00, n01, n10, n11)
+    phi: eventos.prototype.calcularCorrelacion(n00, n01, n10, n11)
   };
 }
 
 // te devuelve las correlaciones mas altas
-function obtenerMayoresCorrelaciones(numero= 3) {
+function obtenerMayoresCorrelaciones(numero = 3) {
+  console.assert(typeof numero === 'number', 'no es un numero');
   let eventosOrdenadosPhi = [];
   let arrayOrdenadoEventos = [];
   let numeroEventosOrdenados= [];
   listadoEventosCorrelacion.forEach(evento => {
     eventosOrdenadosPhi.push(evento.phi);
-    
   });
+  console.assert(eventosOrdenadosPhi.length > 0, 'no contiene almenos un dato');
   // eventos ordenados por phi
   eventosOrdenadosPhi.sort().reverse();
+  // lista con elementos ordenados igual a numero
   numeroEventosOrdenados = eventosOrdenadosPhi.splice(0,numero);
+  console.assert(numeroEventosOrdenados.length === numero , 'no se han copiado o el numero de elementos no es el mismo');
   
-  // copia del numero seleccionado
+  // obtienes la lista con los elementos selecionados y la ordenas
   listadoEventosCorrelacion.forEach(evento => {
     numeroEventosOrdenados.forEach(element => {
       if (element === evento.phi) {
@@ -65,6 +75,7 @@ function obtenerMayoresCorrelaciones(numero= 3) {
     }
     });
   });
+
   arrayOrdenadoEventos.sort().reverse();
   // pusheado objetos en array
   eventosOrdenadosPhi = [];
@@ -75,14 +86,16 @@ function obtenerMayoresCorrelaciones(numero= 3) {
       }
     });
   });
-  console.log(eventosOrdenadosPhi);
+  console.assert(eventosOrdenadosPhi.length === numero , 'no se han copiado o el numero de elementos no es el mismo');
   return eventosOrdenadosPhi;
  }
 
 
 
 function mostrarCorrelacion() {
+  console.assert(listadoEventosCorrelacion.length > 0, 'es una lista vacia');
   listadoEventosCorrelacion.forEach(elemento => {
+    console.assert(elemento === 'object', 'no es una lista de objetos');
   /*   console.log(elemento); */
   });
 }

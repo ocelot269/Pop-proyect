@@ -52,15 +52,13 @@
                     if (index % 7 == 0) {
                         lista.appendChild(row);
                         // for para las filas
-                        for (var indice = 1; indice <= 7; indice++) {
+                        for (var semana = 1; semana <= 7; semana++) {
                             var cell = document.createElement("p");
                             // celda con los numeros
                             row.appendChild(cell);
-                            if (index + indice < 10) {
-                                cell.innerHTML = '0' + String(index + indice);
-                            }else{
-                                cell.innerHTML = index + indice;
-                            }
+                            // condicion
+                            index + semana < 10 ? 
+                            cell.innerHTML = '0' + String(index + semana) : cell.innerHTML = index + semana
                         }
                     }
                 }
@@ -98,5 +96,6 @@
     </div>
 </body>
 <script src="../../back/js/index.js"></script>
+
 
 </html>

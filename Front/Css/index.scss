@@ -222,19 +222,16 @@ input[type=submit]:hover {
     .bar1 {
         grid-area: bar1;
         background-color: $color-background;
-        width: 25%;
     }
 
     .bar2 {
         grid-area: bar2;
         background-color: $color-active;
-        width: 35%;
     }
 
     .bar3 {
         grid-area: bar3;
         background-color: $color-hover;
-        width: 80%;
     }
 
     .bar4 {

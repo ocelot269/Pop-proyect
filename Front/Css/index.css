@@ -216,11 +216,7 @@ input[type=submit]:hover {
 .grafica {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "bar1"
- "bar2"
- "bar3"
- "bar4"
- "bar5";
+      grid-template-areas: "bar1" "bar2" "bar3" "bar4" "bar5";
   grid-gap: 1em;
 }
 

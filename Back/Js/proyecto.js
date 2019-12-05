@@ -14,6 +14,10 @@ let obtenerSetEventosDiario = diario => {
   return acciones;
 };
 
+/* function prueba() {
+  console.log('hola');
+} */
+
 function obtenerListadoEventosCorrelacion(diario) {
   obtenerSetEventosDiario(diario).forEach(elemento => {
     listadoEventosCorrelacion.push(calcularCorrelacion(elemento, diario));
@@ -101,6 +105,7 @@ function mostrarCorrelacion() {
 }
 
 module.exports = {
+/*   prueba: prueba, */
   obtenerMayoresCorrelaciones: obtenerMayoresCorrelaciones,
   obtenerSetEventosDiario: obtenerSetEventosDiario,
   obtenerListadoEventosCorrelacion: obtenerListadoEventosCorrelacion,

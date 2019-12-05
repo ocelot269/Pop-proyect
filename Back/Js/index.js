@@ -10,6 +10,7 @@ let dom = require('./dom');
 //set de acciones
 proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
 //recibe lista
+/* proyecto.prueba(); */
 dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones(5));
 dom.crearTablaCorrelaciones(proyecto.listadoEventosConValores); 
 diarioService.diarioService();

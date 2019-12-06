@@ -1,4 +1,5 @@
 let phi = require("./phi");
+let diario =  require("../../diario");
 
 let listadoEventosCorrelacion = new Array();
 // listado de todos los diferentes eventos que hay en el diario
@@ -14,9 +15,6 @@ let obtenerSetEventosDiario = diario => {
   return acciones;
 };
 
-/* function prueba() {
-  console.log('hola');
-} */
 
 function obtenerListadoEventosCorrelacion(diario) {
   obtenerSetEventosDiario(diario).forEach(elemento => {
@@ -105,7 +103,7 @@ function mostrarCorrelacion() {
 }
 
 module.exports = {
-/*   prueba: prueba, */
+
   obtenerMayoresCorrelaciones: obtenerMayoresCorrelaciones,
   obtenerSetEventosDiario: obtenerSetEventosDiario,
   obtenerListadoEventosCorrelacion: obtenerListadoEventosCorrelacion,

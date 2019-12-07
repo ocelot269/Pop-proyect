@@ -99,9 +99,13 @@ function obtenerPosicionDiario(numero) { // numero es tipo string
       // para quitar el 0 de delante del numero
       numero = numero[1] ;
     }
-      p.innerHTML = 'Eventos:' + diario.DIARIO[numero -1].eventos;
+      p.innerHTML = 'Eventos: ' + diario.DIARIO[numero -1].eventos;
       modal.appendChild(p);
-      p1.innerHTML = 'Pulpo:' + diario.DIARIO[numero- 1].pulpo;
+      if (diario.DIARIO[numero- 1].pulpo == true) {
+        p1.innerHTML = "Pulpo: <img src='https://st2.depositphotos.com/1036149/5289/i/950/depositphotos_52899257-stock-photo-fun-octopus-in-sunglasses.jpg' width='90'>";
+      } else {
+        p1.innerHTML = "Pulpo: <img src='https://fis.com/fis/worldnews/images/24600_350x280_72_DPI_0.jpg' width='90'>";
+      }
       modal.appendChild(p1);
 }
 

@@ -33,7 +33,6 @@ function crearTablaCorrelaciones() {
     }
     tbl.appendChild(tblBody);
     tabla.appendChild(tbl);
-    tbl.setAttribute("border", "2");
   }
 }
 

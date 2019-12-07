@@ -1,0 +1,42 @@
+$fontfamily-title: 'Fjalla One', serif;
+$fontfamily-general: 'Noto Sans', sans-serif;
+$color-background: #054B4E;
+$color-link: #f2f2f2;
+$color-active: #267276;
+$color-hover: #42898C;
+
+/* Grid */
+
+.content {
+
+    .titulo {
+        grid-area: titulo;
+    }
+    
+    .imagen {
+        grid-area: imagen;
+
+        #tabla {
+            border-collapse: collapse;
+            width: 100%;
+              
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+
+                &:hover {
+                    background-color:#f5f5f5;
+                }
+            }
+        }
+    }
+
+    display: grid;
+    grid-gap: 1em;
+    font-family: $fontfamily-general;
+    grid-template-areas: 
+        "titulo"
+        "imagen"
+    ;
+}

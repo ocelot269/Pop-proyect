@@ -48,6 +48,7 @@ function crearValoresGraficaPorLista(lista) {
       numero = String(numero).substring(2, 4) + "%";
       // estilo modificado
       elemento.style.width = numero;
+      elemento.style.fontFamily = "Noto Sans, sans-serif";
       // añades el nombre
       elemento.innerText = lista[index].nombre + " " + numero;
       console.assert(elemento.innerText, "no contiene valor");

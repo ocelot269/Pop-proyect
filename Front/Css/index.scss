@@ -219,39 +219,45 @@ input[type=submit]:hover {
 /* Gráfico */
 
 .grafica {
+
+    .titulo {
+        grid-area: titulo;
+    }
+
     .bar1 {
         grid-area: bar1;
-        background-color: $color-background;
+        background-color: #E2F9FB;
     }
 
     .bar2 {
         grid-area: bar2;
-        background-color: $color-active;
+        background-color: #CAF1F3;
     }
 
     .bar3 {
         grid-area: bar3;
-        background-color: $color-hover;
+        background-color: #B0E6E9;
     }
 
     .bar4 {
         grid-area: bar4;
-        background-color: $color-hover;
+        background-color: #96DADD;
         width: 60%;
     }
 
     .bar5 {
         grid-area: bar5;
-        background-color: $color-hover;
+        background-color: #7CC9CD;
         width: 50%;
     }
 
     display: grid;
     grid-template-areas: 
+    "titulo"
     "bar1"
     "bar2"
     "bar3"
     "bar4"
     "bar5";
-    grid-gap: 1em;
+    font-size: 15px;
 }

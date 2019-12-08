@@ -10,12 +10,11 @@ function crearTablaCorrelaciones() {
     let tbl = document.createElement("table");
     let tblBody = document.createElement("tbody");
     // cabecera
-    let titulosTabla = ['eventos','n00','n01','n10','n11','correlacion'];
+    let titulosTabla = ['Eventos','n00','n01','n10','n11','Correlación'];
     let tr = document.createElement("tr");
     tblBody.appendChild(tr);
     titulosTabla.forEach(ths => {
       let th = document.createElement("th");
-      console.log(tblBody);
       thText = document.createTextNode(ths);
       th.appendChild(thText);
       tr.appendChild(th);

@@ -17,7 +17,7 @@
 ## 1. Desarrollo en Entorno Cliente<a id="cliente"></a>
 ### 1.1 Arquitectura de la aplicación y tecnologías utilizadas<a id="arquitectura"></a>
 
-![Arquitectura](/POP-PROYECT/front/img/arquitectura.jpg)
+![Arquitectura](https://github.com/ocelot269/Pop-proyect/blob/master/Front/img/arquitectura.jpg)
 
 
 ### 1.2 Diagrama de componentes<a id="diagrama"></a>

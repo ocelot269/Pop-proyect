@@ -4,9 +4,12 @@
   "description": "El pulpo de raza loba\r =====================\r #### Examen programación Dual Septiembre 2018",
   "main": "diario.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "sass": "^1.23.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel front/Html/index.html"
   },
   "repository": {
     "type": "git",

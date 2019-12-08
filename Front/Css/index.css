@@ -216,34 +216,50 @@ input[type=submit]:hover {
 .grafica {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "bar1"
- "bar2"
- "bar3";
-  grid-gap: 1em;
+      grid-template-areas: "titulo" "bar1" "bar2" "bar3" "bar4" "bar5";
+  font-size: 15px;
+}
+
+.grafica .titulo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo;
 }
 
 .grafica .bar1 {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: bar1;
-  background-color: #054B4E;
-  width: 25%;
+  background-color: #E2F9FB;
 }
 
 .grafica .bar2 {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: bar2;
-  background-color: #267276;
-  width: 35%;
+  background-color: #CAF1F3;
 }
 
 .grafica .bar3 {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: bar3;
-  background-color: #42898C;
-  width: 80%;
+  background-color: #B0E6E9;
 }
 
+.grafica .bar4 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: bar4;
+  background-color: #96DADD;
+  width: 60%;
+}
+
+.grafica .bar5 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: bar5;
+  background-color: #7CC9CD;
+  width: 50%;
+}
 /*# sourceMappingURL=index.css.map */

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../../front/Css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../front/Css/correlaciones.css" />
     <title>Proyecto POP</title>
 </head>
 
@@ -17,10 +19,10 @@
             <a href="diario.html">Diario</a>
             <a href="correlaciones.html" class="active">Correlaciones</a>
             <a href="" id="login"><i class="fa fa-fw fa-user"></i> Login</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+            <a href="javascript:void(0);" class="icon">&#9776;</a>
         </div>
         <script>
-            function myFunction() {
+            function navbar() {
                 var x = document.getElementById("myTopnav");
                 if (x.className === "topnav") {
                     x.className += " responsive";
@@ -29,7 +31,6 @@
                 }
             }
         </script>
-
         <div class="sidebar2">
             <h1>Subscribete a nuestra Newsletter</h1>
             <form action="newsletter.html">
@@ -45,17 +46,15 @@
                 </div>
             </form>
         </div>
-
-        
-        <div class="content" >
-            <div id ="imagen">
-            <H1 >pulsa en la imagen para ver las correlaciones para convertir a mariano en pulpo</H1>
-            <img onclick="getElementById('tabla').style.display = 'block'; getElementById('imagen').style.display = 'none';" 
-            src="http://s.libertaddigital.com/fotos/noticias/954/0/rajoy_pulpo_14082011.jpg" alt="pulpo Rajoy">
+        <div class="content">
+            <div class="titulo">
+                <h1>Pulsa en la imagen para ver las correlaciones, de los eventos, que convierten a mariano en pulpo</h1>
             </div>
+            <div class="imagen">
+                <img id="imagen" src="http://s.libertaddigital.com/fotos/noticias/954/0/rajoy_pulpo_14082011.jpg"
+                    alt="pulpo Rajoy" width="500">
 
-            <div id="tabla" style="display: none">
-
+                    <div id="tabla" style="display: none"></div>
             </div>
         </div>
         <div class="footer">
@@ -89,6 +88,15 @@
         </div>
     </div>
 </body>
-<script src="../../back/js/index.js"></script>
+<script src="../../back/js/index.js">
+</script>
+<script>
+    // busca la imagen le añade evento click y busca otros elementos en el dom
+    document.querySelector('#imagen').addEventListener("click", () => {
+
+        document.getElementById('tabla').style.display = 'block';
+        document.getElementById('imagen').style.display = 'none';
+    });
+</script>
 
 </html>

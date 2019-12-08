@@ -9,8 +9,10 @@ let dom = require('./dom');
 
 //set de acciones
 proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
-proyecto.obtenerMayoresCorrelaciones(3);
-dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones());
+//recibe lista
+/* proyecto.prueba(); */
+dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones(5));
 dom.crearTablaCorrelaciones(proyecto.listadoEventosConValores); 
-dom.prueba();
-diarioService.diarioService();
+dom.crearTablaEventosDiarios();
+dom.onclickIcon();
+//* diarioService.diarioService(); */

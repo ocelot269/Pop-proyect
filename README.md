@@ -22,7 +22,7 @@
 
 ### 1.2 Diagrama de componentes<a id="diagrama"></a>
 
-![Diagrama](/front/img/diagrama.jpg)
+![Diagrama](https://github.com/ocelot269/Pop-proyect/blob/master/Front/img/diagrama.jpg)
 
 
 ### 1.3 Clockify<a id="clockify"></a>

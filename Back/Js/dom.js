@@ -5,16 +5,27 @@ function crearTablaCorrelaciones() {
   //div tabla reference
   if (document.getElementById("tabla")) {
     let tabla = document.getElementById("tabla");
-
-    // create elements <table> and a <ttabla>
+    
+    // create elements <table> and a <tabla>
     let tbl = document.createElement("table");
-
     let tblBody = document.createElement("tbody");
-
+    // cabecera
+    let titulosTabla = ['eventos','n00','n01','n10','n11','correlacion'];
+    let tr = document.createElement("tr");
+    tblBody.appendChild(tr);
+    titulosTabla.forEach(ths => {
+      let th = document.createElement("th");
+      console.log(tblBody);
+      thText = document.createTextNode(ths);
+      th.appendChild(thText);
+      tr.appendChild(th);
+    });
+    
+    
     // creacion de celdas
     for (let tr = 0; tr < correlacion.listadoEventosCorrelacion.length; tr++) {
       // creacion de filas
-      let row = document.createElement("tr");
+      row = document.createElement("tr");
       //accion posicion
       const eventoPulpo = correlacion.listadoEventosCorrelacion[tr];
       //listado de las propiedades
@@ -32,6 +43,7 @@ function crearTablaCorrelaciones() {
       tblBody.appendChild(row);
     }
     tbl.appendChild(tblBody);
+    
     tabla.appendChild(tbl);
   }
 }

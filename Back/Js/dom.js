@@ -20,7 +20,15 @@ function crearTablaCorrelaciones() {
       th.appendChild(thText);
       tr.appendChild(th);
     });
-    
+
+    function navbar() {
+      let x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+    }
     
     // creacion de celdas
     for (let tr = 0; tr < correlacion.listadoEventosCorrelacion.length; tr++) {

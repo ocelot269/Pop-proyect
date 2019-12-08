@@ -28,6 +28,7 @@
   padding: 8px;
   text-align: left;
   border: 1px solid #ddd;
+  text-align: center;
 }
 
 .content .imagen #tabla th:hover, .content .imagen #tabla td:hover {

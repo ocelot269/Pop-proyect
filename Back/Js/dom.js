@@ -20,15 +20,7 @@ function crearTablaCorrelaciones() {
       th.appendChild(thText);
       tr.appendChild(th);
     });
-
-    function navbar() {
-      let x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-          x.className += " responsive";
-      } else {
-          x.className = "topnav";
-      }
-    }
+    
     
     // creacion de celdas
     for (let tr = 0; tr < correlacion.listadoEventosCorrelacion.length; tr++) {
@@ -104,6 +96,25 @@ function crearTablaEventosDiarios() {
     }
   }
 }
+function onclickIcon() {
+  document.querySelector('.icon').addEventListener("click", evento => {
+    navbar();
+    console.log('entro');
+  });
+}
+function navbar() {
+    
+  let topnav = document.getElementById("myTopnav");
+  console.log(myTopnav);
+  if (myTopnav) {
+    if (topnav.className === "topnav") {
+        topnav.className += " responsive";
+    } else {
+        topnav.className = "topnav";
+    }
+  }
+}
+
 
 function obtenerPosicionDiario(numero) { // numero es tipo string
   console.assert(typeof numero === 'string' && numero, 'no es numero o es null o undefined');
@@ -129,6 +140,7 @@ function obtenerPosicionDiario(numero) { // numero es tipo string
 }
 
 module.exports = {
+  onclickIcon: onclickIcon,
   obtenerPosicionDiario : obtenerPosicionDiario,
   crearTablaCorrelaciones: crearTablaCorrelaciones,
   crearValoresGraficaPorLista: crearValoresGraficaPorLista,

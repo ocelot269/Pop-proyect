@@ -14,5 +14,5 @@ proyecto.obtenerListadoEventosCorrelacion(diario.DIARIO);
 dom.crearValoresGraficaPorLista(proyecto.obtenerMayoresCorrelaciones(5));
 dom.crearTablaCorrelaciones(proyecto.listadoEventosConValores); 
 dom.crearTablaEventosDiarios();
-dom.navbar();
+dom.onclickIcon();
 //* diarioService.diarioService(); */

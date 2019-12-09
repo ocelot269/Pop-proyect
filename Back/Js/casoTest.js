@@ -82,6 +82,43 @@ test('mostrarCorrelacion', () => {
     expect(resultado).toBe(esperado);
 });
 
+// casos test del dom
+
+// test('crearTablaCorrelaciones', () => {
+//     const resultado = proyecto.crearTablaCorrelaciones();
+//     const esperado = undefined;
+//     expect(resultado).toBe(esperado);
+// });
+
+// test('crearValoresGraficaPorLista', () => {
+//     const resultado = proyecto.crearValoresGraficaPorLista(diario.DIARIO);
+//     const esperado = undefined;
+//     expect(resultado).toBe(esperado);
+// });
+
+// test('crearTablaEventosDiarios', () => {
+//     const resultado = proyecto.crearTablaEventosDiarios();
+//     const esperado = undefined;
+//     expect(resultado).toBe(esperado);
+// });
+
+// test('onclickIcon', () => {
+//     const resultado = proyecto.onclickIcon();
+//     const esperado = undefined;
+//     expect(resultado).toBe(esperado);
+// });
+
+// test('navbar', () => {
+//     const resultado = proyecto.navbar();
+//     const esperado = undefined;
+//     expect(resultado).toBe(esperado);
+// });
+
+// test('obtenerPosicionDiario', () => {
+//     const resultado = proyecto.obtenerPosicionDiario(3);
+//     const esperado = undefined;
+//     expect(resultado).toBe(esperado);
+// });
 
 
 

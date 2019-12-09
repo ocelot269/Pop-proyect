@@ -97,7 +97,7 @@ function obtenerMayoresCorrelaciones(numero = 3) {
 function mostrarCorrelacion() {
   console.assert(listadoEventosCorrelacion.length > 0, 'es una lista vacia');
   listadoEventosCorrelacion.forEach(elemento => {
-    console.assert(elemento === 'object', 'no es una lista de objetos');
+    console.assert(typeof elemento === 'object', 'no es una lista de objetos'); 
   /*   console.log(elemento); */
   });
 }

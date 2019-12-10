@@ -40,9 +40,8 @@ function calcularCorrelacion(elemento, listaEventos) {
     }
   });
 
-  console.assert(elemento , 'es un nulo o undefined o vacio');   
   eventos = Object.create(phi.calcularCorrelacion);
-  
+  console.assert(eventos , 'es un nulo o undefined o vacio');
   return {
     nombre: elemento,
     n00: n00,
@@ -59,6 +58,7 @@ function obtenerMayoresCorrelaciones(numero = 3) {
   let eventosOrdenadosPhi = [];
   let arrayOrdenadoEventos = [];
   let numeroEventosOrdenados= [];
+  //Obtienes el phi
   listadoEventosCorrelacion.forEach(evento => {
     eventosOrdenadosPhi.push(evento.phi);
   });
@@ -98,7 +98,7 @@ function mostrarCorrelacion() {
   console.assert(listadoEventosCorrelacion.length > 0, 'es una lista vacia');
   listadoEventosCorrelacion.forEach(elemento => {
     console.assert(typeof elemento === 'object', 'no es una lista de objetos'); 
-  /*   console.log(elemento); */
+    // console.log(elemento);
   });
 }
 

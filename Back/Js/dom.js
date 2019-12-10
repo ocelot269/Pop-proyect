@@ -98,13 +98,11 @@ function crearTablaEventosDiarios() {
 function onclickIcon() {
   document.querySelector('.icon').addEventListener("click", evento => {
     navbar();
-    console.log('entro');
   });
 }
 function navbar() {
     
   let topnav = document.getElementById("myTopnav");
-  console.log(myTopnav);
   if (myTopnav) {
     if (topnav.className === "topnav") {
         topnav.className += " responsive";

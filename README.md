@@ -27,6 +27,7 @@
 
 ### 1.3 Clockify<a id="clockify"></a>
 
+![Clockify](https://github.com/ocelot269/Pop-proyect/blob/master/Front/img/clockify.JPG)
 
 ## 2. Despliegue de la Aplicación Web<a id="despliegue"></a>
 La documentación se podrá encontrar aqui:

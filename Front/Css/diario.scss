@@ -98,7 +98,8 @@ $color-hover: #42898C;
         margin: 15% auto; 
         padding: 20px;
         border: 1px solid #888;
-        width: 80%; 
+        width: 80%;
+        font-family: $fontfamily-general;
 
         .close {
             color: $color-background;

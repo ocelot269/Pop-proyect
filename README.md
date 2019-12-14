@@ -86,6 +86,7 @@ También hemos utilizado la misma paleta de color pero en tono pastel, para los 
 
 ## 4. Información<a id="información"></a>
 ***Nombres de los autores:*** Jose Antonio Zamora Andrés y Sandra Cabrera García
+ ***La idea fundamental del proyecto pertenece a Marijn Haverbeke, nosotros solo hemos cambiado el nombre al personaje ***
 
 ***Curso:*** 2º Desarrollo de Aplicaciones Web
 
